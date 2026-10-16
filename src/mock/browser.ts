@@ -1,10 +1,12 @@
 import { setupWorker } from "msw/browser";
+import { restHandlers } from "./handlers";
+import { socketHandlers } from "./socket";
 
 /**
- * Service Worker do MSW no browser.
+ * Service Worker do MSW no browser (Fase 2).
  *
- * Os handlers REST e o servidor-socket são registrados na Fase 2. Por ora o
- * worker sobe sem handlers — qualquer requisição não interceptada é repassada
- * à rede (onUnhandledRequest: "bypass"), o que mantém o app funcional.
+ * Registra os handlers REST (`/api/*`) e o servidor-socket (`@mswjs/socket.io-binding`),
+ * ambos sobre o mesmo store. Requisições não interceptadas são repassadas à rede
+ * (`onUnhandledRequest: "bypass"` em `enable.ts`).
  */
-export const worker = setupWorker();
+export const worker = setupWorker(...restHandlers, ...socketHandlers);
