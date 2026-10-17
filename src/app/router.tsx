@@ -8,6 +8,7 @@ import { requireAuth } from "@/app/require-auth";
 import { redirectIfAuthenticated } from "@/features/auth/guard";
 import { LoginScreen, RegisterScreen } from "@/features/auth/auth-screens";
 import { CatalogScreen } from "@/features/catalog/catalog-screen";
+import { NftDetailScreen } from "@/features/nft-detail/nft-detail-screen";
 
 /** Search param de retorno ao fluxo (§3): para onde voltar após autenticar. */
 interface AuthSearch {
@@ -95,15 +96,15 @@ const favoritesRoute = createRoute({
 });
 
 /**
- * Rota placeholder do detalhe (decisão A8 do `catalog.spec.md`, confirmada pela thread principal):
- * `nft-detail` ainda não existe, mas os cards do catálogo precisam de um `Link` tipado de verdade
- * para `/nft/$idOrSlug`. Registrada aqui como esqueleto — a feature `nft-detail` troca o
- * `component` por sua implementação, sem recriar a rota.
+ * Rota de detalhe do NFT (A1 do `nft-detail.spec.md`): registrada originalmente pela `catalog`
+ * como esqueleto (`PlaceholderPage`) para que os cards tivessem um `Link` tipado de verdade; a
+ * feature `nft-detail` troca o `component` pela implementação real, sem recriar a rota. Pública —
+ * ações que exigem sessão (favoritar/comprar) são gated dentro da tela.
  */
 const nftDetailRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/nft/$idOrSlug",
-  component: () => <PlaceholderPage title="Detalhe do NFT" />,
+  component: NftDetailScreen,
 });
 
 const routeTree = rootRoute.addChildren([
