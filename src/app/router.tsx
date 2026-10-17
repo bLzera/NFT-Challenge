@@ -11,6 +11,7 @@ import { CatalogScreen } from "@/features/catalog/catalog-screen";
 import { NftDetailScreen } from "@/features/nft-detail/nft-detail-screen";
 import { CartScreen } from "@/features/cart/cart-screen";
 import { CheckoutScreen } from "@/features/checkout/checkout-screen";
+import { OrderConfirmationScreen } from "@/features/order-confirmation/order-confirmation-screen";
 
 /** Search param de retorno ao fluxo (§3): para onde voltar após autenticar. */
 interface AuthSearch {
@@ -90,16 +91,17 @@ const checkoutRoute = createRoute({
 });
 
 /**
- * `/order/$orderId` registrada agora como placeholder privado (A2 do checkout.spec.md), mesmo
- * padrão de `/nft`/`/checkout`: o pós-sucesso do checkout precisa de um `navigate`/`Link` tipado já
- * existente. A feature `order-confirmation` troca depois só o `component` (lê `getOrder`/
- * `keys.order.detail`), sem recriar a rota. Param `$orderId` casa com `getOrderParamsSchema.orderId`.
+ * `/order/$orderId` (A1 do `order-confirmation.spec.md`): registrada pela `checkout` como
+ * placeholder privado (A2 do checkout.spec.md); a feature `order-confirmation` troca só o
+ * `component` pela implementação real (lê `getOrder`/`keys.order.detail` via
+ * `useOrderConfirmation`), sem recriar a rota. Param `$orderId` casa com
+ * `getOrderParamsSchema.orderId`. Permanece privada via `requireAuth`.
  */
 const orderRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/order/$orderId",
   beforeLoad: ({ location }) => requireAuth(location.href),
-  component: () => <PlaceholderPage title="Pedido" />,
+  component: OrderConfirmationScreen,
 });
 
 const profileRoute = createRoute({
