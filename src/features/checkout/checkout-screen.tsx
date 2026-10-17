@@ -9,6 +9,7 @@ import { isQuoteStale } from "@/lib/cart/quote-stale";
 import { useCart } from "@/lib/cart/use-cart";
 import { useQuote } from "@/lib/cart/use-quote";
 import { useSession } from "@/lib/auth/use-session";
+import { useWallets } from "@/lib/wallets/use-wallets";
 import { keys } from "@/lib/query/keys";
 import { cn } from "@/lib/utils";
 import {
@@ -26,7 +27,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { clearPendingOrderId, readPendingOrderId, writePendingOrderId } from "./pending-order-storage";
 import { useCreateOrder } from "./use-create-order";
 import { useOrder } from "./use-order";
-import { useWallets } from "./use-wallets";
 
 /** Estado local de conexão simulado (A4) — nunca persistido, nunca chama rede. */
 type ConnectionState = "disconnected" | "connecting" | "connected";

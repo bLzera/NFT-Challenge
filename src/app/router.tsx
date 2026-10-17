@@ -3,7 +3,6 @@ import { listNftsQuerySchema, type ListNftsQuery } from "@/contracts";
 import { AppShell } from "@/app/shell";
 import { NotFound } from "@/app/not-found";
 import { RouteError } from "@/app/route-error";
-import { PlaceholderPage } from "@/app/placeholder-page";
 import { requireAuth } from "@/app/require-auth";
 import { redirectIfAuthenticated } from "@/features/auth/guard";
 import { LoginScreen, RegisterScreen } from "@/features/auth/auth-screens";
@@ -12,6 +11,9 @@ import { NftDetailScreen } from "@/features/nft-detail/nft-detail-screen";
 import { CartScreen } from "@/features/cart/cart-screen";
 import { CheckoutScreen } from "@/features/checkout/checkout-screen";
 import { OrderConfirmationScreen } from "@/features/order-confirmation/order-confirmation-screen";
+import { ProfileScreen } from "@/features/account/profile/profile-screen";
+import { WalletsScreen } from "@/features/account/wallets/wallets-screen";
+import { FavoritesScreen } from "@/features/account/favorites/favorites-screen";
 
 /** Search param de retorno ao fluxo (§3): para onde voltar após autenticar. */
 interface AuthSearch {
@@ -104,25 +106,30 @@ const orderRoute = createRoute({
   component: OrderConfirmationScreen,
 });
 
+/**
+ * `/profile`, `/wallets`, `/favorites` (A1 da `account.spec.md`): registradas pela `foundation` como
+ * placeholders privados; a feature `account` troca os 3 `component`s pelas implementações reais, sem
+ * recriar rota-pai nem mexer em `beforeLoad`. Cada tela monta `<AccountLayout active="...">`.
+ */
 const profileRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/profile",
   beforeLoad: ({ location }) => requireAuth(location.href),
-  component: () => <PlaceholderPage title="Perfil" />,
+  component: ProfileScreen,
 });
 
 const walletsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/wallets",
   beforeLoad: ({ location }) => requireAuth(location.href),
-  component: () => <PlaceholderPage title="Carteiras" />,
+  component: WalletsScreen,
 });
 
 const favoritesRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/favorites",
   beforeLoad: ({ location }) => requireAuth(location.href),
-  component: () => <PlaceholderPage title="Favoritos" />,
+  component: FavoritesScreen,
 });
 
 /**

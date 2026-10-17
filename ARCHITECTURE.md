@@ -45,3 +45,60 @@ de uma spec única), para rastreabilidade na Fase 7.
   dedicado reaproveitando a estética de `ErrorState`/`Surface Card` (`role="alert"`, título
   "Pagamento recusado", descrição neutra, CTA "Tentar novamente" → `/cart`), sem reexibir o recibo
   de sucesso.
+
+## `account` (profile + wallets + favorites, Fase 4)
+
+- **Promoção de `use-wallets` para `src/lib/wallets/` (decisão #2 do orquestrador).** O hook de
+  leitura `useWallets(enabled)` vivia em `src/features/checkout/use-wallets.ts`. A feature `wallets`
+  (área de conta) também precisa ler `listWallets`/`keys.wallets` para a tela `/wallets` — para não
+  criar dependência horizontal feature→feature (o mesmo motivo da extração de `src/lib/cart/`
+  documentada acima), o arquivo foi **movido** (lógica inalterada) para
+  `src/lib/wallets/use-wallets.ts`. `src/features/checkout/checkout-screen.tsx` teve o import
+  reapontado para `@/lib/wallets/use-wallets` — nenhuma outra edição em arquivo do `checkout`. A
+  feature `account/wallets` consome o mesmo hook de `@/lib/wallets/use-wallets`, nunca de
+  `@/features/checkout`.
+
+- **Três rotas, um `AccountLayout` compartilhado (A1 da spec `account`).** `/profile`, `/wallets`,
+  `/favorites` continuam como rotas distintas e privadas (`requireAuth`), cada uma só trocando o
+  `component` do placeholder já registrado em `src/app/router.tsx` — nenhuma rota-pai foi criada. A
+  sidebar "Meu perfil" do Figma foi extraída como `src/features/account/account-layout.tsx`,
+  composto por cada tela via `<AccountLayout active="profile|wallets|favorites">`.
+
+- **Sidebar: Favoritos substitui "Lista de interesse" como item navegável (A2).** O Figma rotula o
+  item como "Lista de interesse" (Watchlist); como Favoritos é a feature realmente entregue e
+  precisa de um ponto de navegação consistente com o `AccountMenu` do header, o rótulo foi trocado
+  para "Favoritos" → `/favorites`. Os demais itens do Figma sem rota/contrato (Atividade, Ofertas,
+  Arquivos baixados, Suporte) permanecem visíveis porém inertes (`aria-disabled`, sem `href` e
+  **sem `tabIndex`** — não entram na ordem de tabulação, pois não têm ação), conforme §3 do README
+  (não fazem parte da entrega). Os itens inertes aparecem **só no desktop**: no mobile não há frame
+  Figma de conta e a nav vira uma faixa horizontal apenas com os 3 links reais (decisão A6, sem
+  perda funcional).
+
+- **Campos do Figma sem contrato, omitidos (§3/§11).** Perfil: "Nome ENS/.eth", "Apelido da
+  carteira", "Website". Carteiras: "Código de indicação", "Nome do perfil", "E-mail da carteira",
+  "Nome ENS/.eth", "Igual à carteira principal". Nenhum desses tem campo correspondente em
+  `UpdateProfileRequest`/`ChangePasswordRequest`/`CreateWalletRequest` — não foram renderizados como
+  campos editáveis (evitaria simular persistência sem backend real).
+
+- **Avatar por URL, sem upload (A-profile-3).** `updateProfile`/`updateAvatar` aceitam só
+  `avatarUrl: string`. O botão "Alterar"/"Remover" do Figma opera sobre um campo de texto/URL +
+  preview circular, não `<input type=file>`.
+
+- **Redes do `<select>` de cadastro de carteira derivadas do mock (A-wallets-2).** `network` é
+  string livre no contrato; não há endpoint que liste redes. O conjunto oferecido no `<select>` é
+  `["ethereum", "polygon"]` (as únicas redes usadas em `src/mock/fixtures/users.ts`), unido às redes
+  já presentes nas carteiras do usuário corrente (`availableNetworks` em
+  `src/features/account/wallets/wallet-schemas.ts`, função pura) para nunca ocultar uma rede legada
+  que já exista numa carteira cadastrada.
+
+- **Mutações de carteira por invalidação, não otimistas (A-wallets-1).** Ao contrário do toggle de
+  favorito (alta frequência, otimista), cadastro/edição de carteira usam `useMutation({ retry: 0 })`
+  → `invalidateQueries(keys.wallets)` em `onSuccess`. Justificativa: a lista de carteiras alimenta o
+  checkout: um estado otimista mal reconciliado ali confundiria o usuário num fluxo sensível a
+  dinheiro.
+
+- **Sem frame de Favoritos nem frames Mobile de conta (README §3).** A tela `/favorites` foi
+  derivada do padrão de grade do catálogo (`NftCard`), com um card próprio
+  (`src/features/account/favorites/favorite-card.tsx`) que sobrepõe o botão "Remover dos favoritos".
+  O layout mobile/tablet (390/768) do `AccountLayout` — sidebar virando nav horizontal rolável no
+  topo — também é derivado (A6), sem frame específico no Figma.
