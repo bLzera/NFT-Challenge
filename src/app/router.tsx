@@ -4,6 +4,8 @@ import { NotFound } from "@/app/not-found";
 import { RouteError } from "@/app/route-error";
 import { PlaceholderPage } from "@/app/placeholder-page";
 import { requireAuth } from "@/app/require-auth";
+import { redirectIfAuthenticated } from "@/features/auth/guard";
+import { LoginScreen, RegisterScreen } from "@/features/auth/auth-screens";
 
 /** Search param de retorno ao fluxo (§3): para onde voltar após autenticar. */
 interface AuthSearch {
@@ -11,7 +13,13 @@ interface AuthSearch {
 }
 
 function validateAuthSearch(search: Record<string, unknown>): AuthSearch {
-  return { redirect: typeof search.redirect === "string" ? search.redirect : undefined };
+  // Sanitiza o `redirect` já na origem (defesa em profundidade anti open-redirect): só aceita um
+  // caminho interno — começa com uma única "/". URLs absolutas e protocol-relative (`//host`) viram
+  // `undefined`. Os consumos ainda passam por `safeInternalPath`.
+  const raw = search.redirect;
+  const redirect =
+    typeof raw === "string" && raw.startsWith("/") && !raw.startsWith("//") ? raw : undefined;
+  return { redirect };
 }
 
 const rootRoute = createRootRoute({
@@ -38,16 +46,17 @@ const loginRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/login",
   validateSearch: validateAuthSearch,
-  component: () => <PlaceholderPage title="Entrar" description="Login chega na feature `auth`." />,
+  // Já autenticado não loga de novo → volta para o destino (spec §Roteamento, critério 5).
+  beforeLoad: ({ search }) => redirectIfAuthenticated(search.redirect),
+  component: LoginScreen,
 });
 
 const registerRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/register",
   validateSearch: validateAuthSearch,
-  component: () => (
-    <PlaceholderPage title="Criar conta" description="Cadastro chega na feature `auth`." />
-  ),
+  beforeLoad: ({ search }) => redirectIfAuthenticated(search.redirect),
+  component: RegisterScreen,
 });
 
 const cartRoute = createRoute({

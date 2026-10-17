@@ -27,6 +27,8 @@ enunciado.
 | `sonner` | ^2.0.8 | Toaster acessível para feedback de mutations e de eventos em tempo real. | **Componente de toast oficial do shadcn/ui** (substituiu o `toast` legado). §8 exige feedback acessível para mutations e mudanças em tempo real; o Sonner entrega `aria-live`/foco prontos. |
 | `@fontsource/roboto-mono` | ^5.3.0 | Fonte Roboto Mono **self-hosted** (pesos 400/500/700). | O design usa Roboto Mono em 100% dos textos. Self-hosting evita dependência de CDN/Google Fonts em runtime — requisito de execução a partir de checkout limpo (§12) e de Lighthouse sem rede externa (§10); §8 pede fontes acessíveis à execução local. |
 | `@radix-ui/react-{slot,label,dialog,dropdown-menu,tooltip,separator}` | 1.x–2.x | Primitivos headless (foco preso, Esc, `aria-modal`, teclado) sob os componentes `src/components/ui/*`. | São as **primitivas que o shadcn/ui usa** — cada componente shadcn gerado importa seu pacote Radix correspondente. Entregam a acessibilidade de diálogo/menu/tooltip exigida em §8 sem reimplementar foco/teclado à mão. |
+| `react-hook-form` | ^7.90.0 | Estado/validação dos formulários de UI (auth; depois perfil, senha, carteiras). | §4 pede formulários controlados com validação e integração tipada; RHF entrega gestão de campos não-controlados performática (menos re-render), estados `isSubmitting`/erros por campo e integração nativa com resolvers de schema. Alternativa manual (useState por campo) reimplementaria validação, foco e acessibilidade de erro à mão. |
+| `@hookform/resolvers` | ^5.9.2 | Ponte entre `react-hook-form` e os schemas Zod de `@/contracts` (`zodResolver`). | Valida os formulários **com os mesmos schemas Zod dos contratos** (fonte única, §4) em vez de duplicar regras; o `zodResolver` mapeia erros do Zod para os campos do RHF automaticamente. |
 
 ## Desenvolvimento (`devDependencies`)
 
@@ -44,5 +46,5 @@ enunciado.
 - **`vite-plugin-svgr`** — avaliado para importar os SVGs de `design/assets/svg/` como componentes.
   Dispensado: `lucide-react` cobre os ícones de UI e os poucos SVGs de marca são inlinados sob
   demanda. Reavaliar se o volume de SVGs de marca crescer.
-- **Resolver de formulário (`react-hook-form` + `@hookform/resolvers`)** — a decidir na feature
-  `auth` (primeira com formulário real). Se adotado, entra aqui com a justificativa.
+- ~~**Resolver de formulário (`react-hook-form` + `@hookform/resolvers`)**~~ — **adotado** na feature
+  `auth` (ver tabela de runtime acima). Decisão A4 da `auth.spec.md`.
