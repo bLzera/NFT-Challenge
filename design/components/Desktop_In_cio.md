@@ -1,0 +1,1549 @@
+# Desktop / Início
+
+- **Desktop / Início** `FRAME` — 1440×3668
+  - layout: column
+  - gap: 96
+  - padding: 24 120 24 120 (T R B L)
+  - fill: #140D0A (Color/Ink)
+  - **Top** `FRAME` — 1200×527
+    - layout: column
+    - gap: 32
+    - **Header With Divider** `INSTANCE` — 1200×45
+      - layout: column
+      - **Header Row** `INSTANCE` — 1200×45
+        - layout: row
+        - justify: SPACE_BETWEEN
+          - **KURIO Wordmark** `TEXT` — 48×18
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 700 14px / lh 18px / ls 1.4
+            - textStyle: Body/14 Bold · lh auto
+            - content: KURIO
+        - **Nav** `FRAME` — 401×45
+          - layout: row
+          - gap: 40
+          - **Nav Item** `FRAME` — 58×45
+            - layout: column
+            - gap: 24
+            - **Início** `TEXT` — 58×21
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 700 16px / lh 21px / ls 0
+              - textStyle: Body Large/16 Bold · lh auto
+              - content: Início
+            - **Active Underline** `LINE` — 58×0
+              - stroke: #D28A4C (Color/Primary)
+              - strokeWeight: 3
+              - strokeAlign: CENTER
+          - **Mercado** `TEXT` — 68×21
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 16px / lh 21px / ls 0
+            - textStyle: Body Large/16 Regular · lh auto
+            - content: Mercado
+          - **Criadores** `TEXT` — 87×21
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 16px / lh 21px / ls 0
+            - textStyle: Body Large/16 Regular · lh auto
+            - content: Criadores
+          - **Aprenda** `TEXT` — 68×21
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 16px / lh 21px / ls 0
+            - textStyle: Body Large/16 Regular · lh auto
+            - content: Aprenda
+        - **Header Actions** `FRAME` — 207×35
+          - layout: row
+          - gap: 28
+          - align: CENTER
+          - **Search Icon** `VECTOR` — 20×20
+            - fill: #F5F1EB (Color/Foreground)
+            - **Cart Icon** `VECTOR` — 24×24
+              - fill: #F5F1EB (Color/Foreground)
+            - **Badge** `ELLIPSE` — 16×16
+              - fill: #D28A4C (Color/Primary)
+              - stroke: #140D0A (Color/Ink)
+              - strokeWeight: 2
+              - strokeAlign: OUTSIDE
+            - **Badge Count** `TEXT` — 7×13
+              - fill: #140D0A (Color/Ink)
+              - text: Roboto Mono 500 10px / lh 13px / ls 0
+              - textStyle: Tiny/10 Medium
+              - content: 6
+          - **Login** `GROUP` — 100×35
+            - radius: 6
+            - **Login Button** `FRAME` — 100×35
+              - layout: column
+              - gap: 10
+              - justify: CENTER
+              - align: CENTER
+              - fill: #D28A4C (Color/Primary)
+              - radius: 6
+              - **Login Button Content** `FRAME` — 82×21
+                - layout: row
+                - gap: 4
+                    - **Stroke 1** `VECTOR` — 10×1
+                      - stroke: #140D0A (Color/Ink)
+                      - strokeWeight: 1.5
+                      - strokeAlign: CENTER
+                    - **Stroke 3** `VECTOR` — 2×5
+                      - stroke: #140D0A (Color/Ink)
+                      - strokeWeight: 1.5
+                      - strokeAlign: CENTER
+                    - **Stroke 4** `VECTOR` — 12×15
+                      - stroke: #140D0A (Color/Ink)
+                      - strokeWeight: 1.5
+                      - strokeAlign: CENTER
+                - **Entrar** `TEXT` — 58×21
+                  - fill: #140D0A (Color/Ink)
+                  - text: Roboto Mono 500 16px / lh 21px / ls 0
+                  - textStyle: Body Large/16 Medium · lh auto
+                  - content: Entrar
+      - **Line 1** `LINE` — 1200×0
+        - stroke: #D28A4C (Color/Primary)
+        - strokeWeight: 0.30000001192092896
+        - strokeAlign: CENTER
+    - **Hero** `FRAME` — 1200×450
+      - layout: row
+      - padding: 0 0 0 40 (T R B L)
+      - align: CENTER
+      - **Frame 137** `FRAME` — 1160×450
+        - layout: row
+        - gap: 110
+        - justify: SPACE_BETWEEN
+        - align: CENTER
+        - **Frame 135** `FRAME` — 600×364
+          - layout: column
+          - gap: 44
+          - align: MAX
+          - **Frame 134** `FRAME` — 600×312
+            - layout: column
+            - gap: 32
+            - **Frame 133** `FRAME` — 600×240
+              - layout: column
+              - gap: 4
+              - **Frame 132** `FRAME` — 600×164
+                - layout: column
+                - gap: 8
+                - **Bem-vindo à Kurio** `TEXT` — 600×16
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 500 14px / lh 16px / ls 1.4
+                  - textStyle: Body/14 Medium · lh 16
+                  - content: Bem-vindo à Kurio
+                - **OWN THE FUTURE OF
+DIGITAL ART** `TEXT` — 600×140
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 700 43px / lh 70px / ls 0
+                  - textStyle: Display/43 Bold
+                  - content: SEJA DONO DO FUTURO
+DA ARTE DIGITAL
+              - **Discover curated NFTs from emerging and established creators. Collect rare digit** `TEXT` — 557×72
+                - fill: #CFB28C (Text/Secondary)
+                - text: Roboto Mono 400 14px / lh 24px / ls 0
+                - textStyle: Body/14 Regular · lh 24
+                - content: Descubra NFTs selecionados de criadores emergentes e consagrados. Colecione arte
+            - **Frame 131** `FRAME` — 140×40
+              - layout: row
+              - gap: 10
+              - padding: 10 36 10 28 (T R B L)
+              - justify: CENTER
+              - align: CENTER
+              - fill: #D28A4C (Color/Primary)
+              - radius: 6
+              - **EXPLORAR** `TEXT` — 77×20
+                - fill: #140D0A (Color/Ink)
+                - text: Roboto Mono 700 16px / lh 20px / ls 0
+                - textStyle: Body Large/16 Bold · lh 20
+                - content: EXPLORAR
+            - **Ellipse 2** `ELLIPSE` — 8×8
+              - fill: #D28A4C (Color/Primary)
+            - **Ellipse 3** `ELLIPSE` — 8×8
+              - fill: #D28A4C (Color/Primary)
+            - **Ellipse 4** `ELLIPSE` — 8×8
+              - fill: #D28A4C (Color/Primary)
+        - **Frame 136** `FRAME` — 450×450
+          - layout: row
+          - gap: 10
+          - padding: 280 290 50 40 (T R B L)
+          - fill: IMAGE (ref: 8459204731e6eba9d474cbc8ebc37071360d3ba5)
+          - radius: 24
+  - **Products** `FRAME` — 1200×1373
+    - layout: row
+    - gap: 48
+    - **Sidebar** `FRAME` — 310×1279
+      - layout: column
+      - gap: 24
+      - **Filters** `INSTANCE` — 310×785
+        - layout: column
+        - padding: 20 20 20 20 (T R B L)
+        - fill: #241612 (Color/Surface Card)
+        - **Frame 140** `FRAME` — 270×745
+          - layout: column
+          - gap: 40
+          - **Collections Filter** `FRAME` — 270×388
+            - layout: column
+            - gap: 12
+            - **Coleções** `TEXT` — 87×16
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 700 18px / lh 16px / ls 0
+              - textStyle: Body Large/18 Bold · lh 16
+              - content: Coleções
+            - **List** `FRAME` — 270×360
+              - layout: column
+              - padding: 0 12 0 12 (T R B L)
+              - **Frame 382** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 373** `FRAME` — 109×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships** `TEXT` — 109×40
+                    - fill: #E89B55 (Text/Accent)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Arte digital
+                - **(33)** `TEXT` — 37×40
+                  - fill: #E89B55 (Text/Accent)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (33)
+              - **Frame 383** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 374** `FRAME` — 91×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships
+** `TEXT` — 91×40
+                    - fill: #CFB28C (Text/Secondary)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Fotografia
+                - **(12)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (12)
+              - **Frame 384** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 375** `FRAME` — 55×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships
+** `TEXT` — 55×40
+                    - fill: #CFB28C (Text/Secondary)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Música
+                - **(65)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (65)
+              - **Frame 385** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 376** `FRAME` — 64×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships
+** `TEXT` — 64×40
+                    - fill: #CFB28C (Text/Secondary)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Arte 3D
+                - **(39)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (39)
+              - **Frame 390** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 377** `FRAME` — 118×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships
+** `TEXT` — 118×40
+                    - fill: #CFB28C (Text/Secondary)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Colecionáveis
+                - **(23)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (23)
+              - **Frame 389** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 378** `FRAME` — 91×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships
+** `TEXT` — 91×40
+                    - fill: #CFB28C (Text/Secondary)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Generativa
+                - **(17)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (17)
+              - **Frame 388** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 379** `FRAME` — 46×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships
+** `TEXT` — 46×40
+                    - fill: #CFB28C (Text/Secondary)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Jogos
+                - **(19)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (19)
+              - **Frame 387** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 380** `FRAME` — 100×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships
+** `TEXT` — 100×40
+                    - fill: #CFB28C (Text/Secondary)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Assinaturas
+                - **(13)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (13)
+              - **Frame 386** `FRAME` — 246×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Frame 381** `FRAME` — 82×40
+                  - layout: row
+                  - gap: 10
+                  - justify: CENTER
+                  - align: CENTER
+                  - **Digital Art
+Photography
+Music
+3D Art
+Collectibles
+Generative
+Gaming
+Memberships
+** `TEXT` — 82×40
+                    - fill: #CFB28C (Text/Secondary)
+                    - text: Roboto Mono 400 15px / lh 40px / ls 0
+                    - textStyle: Body/15 Regular · lh 40
+                    - content: Utilidade
+                - **(18)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 700 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Bold · lh 40
+                  - content: (18)
+          - **Price Filter** `FRAME` — 270×129
+            - layout: column
+            - gap: 12
+            - **Faixa de preço** `TEXT` — 152×16
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 700 18px / lh 16px / ls 0
+              - textStyle: Body Large/18 Bold · lh 16
+              - content: Faixa de preço
+            - **Controls** `FRAME` — 270×101
+              - layout: column
+              - gap: 12
+              - padding: 0 0 0 12 (T R B L)
+              - **Slider** `FRAME` — 258×21
+                - layout: row
+                - align: CENTER
+                - **Ellipse 5** `ELLIPSE` — 15×15
+                  - fill: #D28A4C (Color/Primary)
+                  - stroke: #140D0A (Color/Ink)
+                  - strokeWeight: 3
+                  - strokeAlign: OUTSIDE
+                - **Line 6** `LINE` — 161×0
+                  - stroke: #D28A4C (Color/Primary)
+                  - strokeWeight: 4
+                  - strokeAlign: CENTER
+                - **Ellipse 6** `ELLIPSE` — 15×15
+                  - fill: #D28A4C (Color/Primary)
+                  - stroke: #140D0A (Color/Ink)
+                  - strokeWeight: 3
+                  - strokeAlign: OUTSIDE
+                - **Line 5** `LINE` — 55×0
+                  - stroke: #D28A4C (Color/Primary)
+                  - strokeWeight: 4
+                  - strokeAlign: CENTER
+              - **Frame 391** `FRAME` — 258×20
+                - layout: row
+                - gap: 10
+                - align: CENTER
+                - **Preço: 0,02 - 12,30 ETH** `TEXT` — 208×20
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 400 15px / lh 20px / ls 0
+                  - textStyle: Body/15 Regular · lh 16
+                  - content: Preço: 0,02 - 12,30 ETH
+              - **Apply Button** `FRAME` — 92×36
+                - layout: row
+                - padding: 8 12 8 12 (T R B L)
+                - align: CENTER
+                - fill: #D28A4C (Color/Primary)
+                - radius: 6
+                - **Aplicar** `TEXT` — 68×20
+                  - fill: #140D0A (Color/Ink)
+                  - text: Roboto Mono 700 16px / lh 20px / ls 0
+                  - textStyle: Body Large/16 Bold · lh 20
+                  - content: Aplicar
+          - **Network Filter** `FRAME` — 270×148
+            - layout: column
+            - gap: 12
+            - **Rede** `TEXT` — 44×16
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 700 18px / lh 16px / ls 0
+              - textStyle: Body Large/18 Bold · lh 16
+              - content: Rede
+            - **List** `FRAME` — 270×120
+              - layout: column
+              - padding: 0 0 0 12 (T R B L)
+              - **Frame 392** `FRAME` — 258×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Ethereum
+Polygon
+Solana** `TEXT` — 73×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 400 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Regular · lh 40
+                  - content: Ethereum
+                - **(119)** `TEXT` — 46×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 400 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Regular · lh 40
+                  - content: (119)
+              - **Frame 393** `FRAME` — 258×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Ethereum
+Polygon
+Solana** `TEXT` — 64×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 400 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Regular · lh 40
+                  - content: Polygon
+                - **(78)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 400 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Regular · lh 40
+                  - content: (78)
+              - **Frame 394** `FRAME` — 258×40
+                - layout: row
+                - justify: SPACE_BETWEEN
+                - **Ethereum
+Polygon
+Solana** `TEXT` — 55×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 400 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Regular · lh 40
+                  - content: Solana
+                - **(86)** `TEXT` — 37×40
+                  - fill: #CFB28C (Text/Secondary)
+                  - text: Roboto Mono 400 15px / lh 40px / ls 0
+                  - textStyle: Body/15 Regular · lh 40
+                  - content: (86)
+      - **Featured NFT Banner** `FRAME` — 310×470
+        - layout: row
+        - gap: 10
+        - padding: 24 0 4 0 (T R B L)
+        - fill: GRADIENT_LINEAR [#D28A4C1a → #D28A4C08]
+        - **Frame 396** `FRAME` — 310×448
+          - layout: column
+          - gap: 16
+          - **Frame 395** `FRAME` — 310×64
+            - layout: column
+            - gap: 16
+            - align: CENTER
+            - **Frame 397** `FRAME` — 310×32
+              - layout: row
+              - gap: 10
+              - padding: 0 20 0 20 (T R B L)
+              - justify: CENTER
+              - align: CENTER
+              - **NFT EM DESTAQUE** `TEXT` — 270×32
+                - fill: #E89B55 (Text/Accent)
+                - text: Roboto Mono 700 24px / lh 32px / ls 0
+                - content: NFT EM DESTAQUE
+            - **Frame 398** `FRAME` — 310×16
+              - layout: row
+              - gap: 10
+              - padding: 0 20 0 20 (T R B L)
+              - justify: CENTER
+              - align: CENTER
+              - **OFERTA LIMITADA** `TEXT` — 270×16
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 700 22px / lh 16px / ls 0
+                - content: OFERTA LIMITADA
+          - **NFT Artwork 18** `RECTANGLE` — 310×368
+            - fill: IMAGE (ref: 2986a7cb16d09de8970824d2dd58bf0bb021702c)
+            - radius: 22
+        - **Rectangle 30** `RECTANGLE` — 22×22
+          - stroke: GRADIENT_LINEAR [#46A358 → #46A35800]
+          - strokeWeight: 2
+          - strokeAlign: INSIDE
+          - radius: 7
+          - opacity: 0.20000000298023224
+        - **Rectangle 31** `RECTANGLE` — 45×45
+          - fill: GRADIENT_LINEAR [#D28A4C → #D28A4C00]
+          - radius: 29
+        - **Rectangle 32** `RECTANGLE` — 15×15
+          - fill: GRADIENT_LINEAR [#D28A4C → #D28A4C00]
+          - radius: 29
+    - **Product Grid** `FRAME` — 842×1373
+      - layout: column
+      - gap: 88
+      - align: MAX
+      - **Frame 233** `FRAME` — 842×1250
+        - layout: column
+        - gap: 32
+        - **Toolbar** `FRAME` — 842×18
+          - layout: row
+          - justify: SPACE_BETWEEN
+          - align: CENTER
+          - **Tabs** `FRAME` — 376×16
+            - layout: row
+            - gap: 20
+            - **Todos os NFTs** `TEXT` — 118×16
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 500 15px / lh 16px / ls 0
+              - textStyle: Body/15 Medium
+              - content: Todos os NFTs
+            - **Novos lançamentos** `TEXT` — 154×16
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 500 15px / lh 16px / ls 0
+              - textStyle: Body/15 Medium
+              - content: Novos lançamentos
+            - **Em alta** `TEXT` — 64×16
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 500 15px / lh 16px / ls 0
+              - textStyle: Body/15 Medium
+              - content: Em alta
+            - **Ordenar por:** `TEXT` — 109×20
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 400 15px / lh 20px / ls 0
+              - textStyle: Body/15 Regular · lh 16
+              - content: Ordenar por:
+            - **Listados recentemente** `TEXT` — 190×20
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 400 15px / lh 20px / ls 0
+              - textStyle: Body/15 Regular · lh 16
+              - content: Listados recentemente
+                  - **Stroke 1** `VECTOR` — 9×5
+                    - stroke: #F5F1EB (Color/Foreground)
+                    - strokeWeight: 1.5
+                    - strokeAlign: CENTER
+          - **Line 3** `LINE` — 101×0
+            - stroke: #D28A4C (Color/Primary)
+            - strokeWeight: 2
+            - strokeAlign: CENTER
+        - **Grid Rows** `FRAME` — 842×1200
+          - layout: column
+          - gap: 72
+          - **Frame 206** `FRAME` — 842×356
+            - layout: row
+            - gap: 32
+            - justify: SPACE_BETWEEN
+            - align: CENTER
+            - **Frame 141** `FRAME` — 258×356
+              - layout: column
+              - gap: 12
+              - **Rectangle 6** `RECTANGLE` — 258×300
+                - fill: #241612 (Color/Surface Card)
+              - **Emerald Ape #042** `TEXT` — 258×16
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 400 16px / lh 16px / ls 0
+                - textStyle: Body Large/16 Regular · lh 16
+                - content: Emerald Ape #042
+              - **1.19 ETH** `TEXT` — 258×16
+                - fill: #E89B55 (Text/Accent)
+                - text: Roboto Mono 700 18px / lh 16px / ls 0
+                - textStyle: Body Large/18 Bold · lh 16
+                - content: 1.19 ETH
+              - **NFT Artwork 03** `RECTANGLE` — 250×250
+                - fill: IMAGE (ref: 8459204731e6eba9d474cbc8ebc37071360d3ba5)
+                - radius: 15
+            - **Frame 142** `FRAME` — 258×356
+              - layout: column
+              - gap: 12
+              - **Rectangle 7** `RECTANGLE` — 258×300
+                - fill: #241612 (Color/Surface Card)
+              - **Sage Nomad #009** `TEXT` — 258×16
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 400 16px / lh 16px / ls 0
+                - textStyle: Body Large/16 Regular · lh 16
+                - content: Sage Nomad #009
+              - **1.69 ETH** `TEXT` — 258×16
+                - fill: #E89B55 (Text/Accent)
+                - text: Roboto Mono 700 18px / lh 16px / ls 0
+                - textStyle: Body Large/18 Bold · lh 16
+                - content: 1.69 ETH
+              - **NFT Artwork 04** `RECTANGLE` — 250×250
+                - fill: IMAGE (ref: 2986a7cb16d09de8970824d2dd58bf0bb021702c)
+                - radius: 15
+            - **Frame 144** `FRAME` — 258×356
+              - layout: column
+              - gap: 12
+              - **Rectangle 8** `RECTANGLE` — 258×300
+                - fill: #241612 (Color/Surface Card)
+              - **Neon Vessel #552** `TEXT` — 258×16
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 400 16px / lh 16px / ls 0
+                - textStyle: Body Large/16 Regular · lh 16
+                - content: Neon Vessel #552
+              - **Frame 143** `FRAME` — 186×16
+                - layout: row
+                - gap: 12
+                - align: CENTER
+                - **1.99 ETH** `TEXT` — 87×16
+                  - fill: #E89B55 (Text/Accent)
+                  - text: Roboto Mono 700 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Bold · lh 16
+                  - content: 1.99 ETH
+                - **2.29 ETH** `TEXT` — 87×16
+                  - fill: #B39463 (Color/Secondary)
+                  - text: Roboto Mono 400 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Regular
+                  - content: 2.29 ETH
+              - **NFT Artwork 05** `RECTANGLE` — 250×250
+                - fill: IMAGE (ref: 9df2ff42dd27ba657621c304557d1a855a4be6a5)
+                - radius: 15
+          - **Frame 230** `FRAME` — 842×350
+            - layout: row
+            - gap: 32
+            - justify: SPACE_BETWEEN
+            - align: CENTER
+            - **Frame 209** `FRAME` — 258×350
+              - layout: column
+              - gap: 12
+              - **Frame 207** `FRAME` — 258×300
+                - layout: row
+                - gap: 10
+                - padding: 6 12 8 20 (T R B L)
+                - fill: #241612 (Color/Surface Card)
+                - **NFT Artwork 06** `RECTANGLE` — 224×286
+                  - fill: IMAGE (ref: 2986a7cb16d09de8970824d2dd58bf0bb021702c)
+                  - radius: 13
+              - **Frame 208** `FRAME` — 164×38
+                - layout: column
+                - gap: 6
+                - **Cosmic Bloom #118** `TEXT` — 164×16
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 400 16px / lh 16px / ls 0
+                  - textStyle: Body Large/16 Regular · lh 16
+                  - content: Cosmic Bloom #118
+                - **1.29 ETH** `TEXT` — 164×16
+                  - fill: #E89B55 (Text/Accent)
+                  - text: Roboto Mono 700 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Bold · lh 16
+                  - content: 1.29 ETH
+            - **Frame 212** `FRAME` — 258×350
+              - layout: column
+              - gap: 12
+              - **Frame 211** `FRAME` — 258×300
+                - layout: row
+                - gap: 10
+                - padding: 24 4 28 4 (T R B L)
+                - fill: #241612 (Color/Surface Card)
+                - **NFT Artwork 07** `RECTANGLE` — 250×250
+                  - fill: IMAGE (ref: 2986a7cb16d09de8970824d2dd58bf0bb021702c)
+                  - radius: 15
+              - **Frame 210** `FRAME` — 164×38
+                - layout: column
+                - gap: 6
+                - **Violet Nomad #314** `TEXT` — 164×16
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 400 16px / lh 16px / ls 0
+                  - textStyle: Body Large/16 Regular · lh 16
+                  - content: Violet Nomad #314
+                - **1.39 ETH** `TEXT` — 164×16
+                  - fill: #E89B55 (Text/Accent)
+                  - text: Roboto Mono 700 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Bold · lh 16
+                  - content: 1.39 ETH
+            - **Frame 215** `FRAME` — 258×350
+              - layout: column
+              - gap: 12
+              - **Frame 214** `FRAME` — 258×300
+                - layout: row
+                - gap: 10
+                - padding: 24 4 28 4 (T R B L)
+                - fill: #241612 (Color/Surface Card)
+                - **NFT Artwork 08** `RECTANGLE` — 250×250
+                  - fill: IMAGE (ref: 9df2ff42dd27ba657621c304557d1a855a4be6a5)
+                  - radius: 15
+              - **Frame 213** `FRAME` — 154×38
+                - layout: column
+                - gap: 6
+                - **Ivory Baron #088** `TEXT` — 154×16
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 400 16px / lh 16px / ls 0
+                  - textStyle: Body Large/16 Regular · lh 16
+                  - content: Ivory Baron #088
+                - **1.79 ETH** `TEXT` — 154×16
+                  - fill: #E89B55 (Text/Accent)
+                  - text: Roboto Mono 700 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Bold · lh 16
+                  - content: 1.79 ETH
+          - **Frame 231** `FRAME` — 842×350
+            - layout: row
+            - gap: 32
+            - justify: SPACE_BETWEEN
+            - **Frame 218** `FRAME` — 258×350
+              - layout: column
+              - gap: 12
+              - **Frame 216** `FRAME` — 258×300
+                - layout: row
+                - gap: 10
+                - padding: 20 4 32 4 (T R B L)
+                - fill: #241612 (Color/Surface Card)
+                - **NFT Artwork 09** `RECTANGLE` — 250×250
+                  - fill: IMAGE (ref: 87580f2def9af0ce13f4b6f6ce17bb2449bcfc16)
+                  - radius: 15
+              - **Frame 217** `FRAME` — 154×38
+                - layout: column
+                - gap: 6
+                - **Golden Beat #207** `TEXT` — 154×16
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 400 16px / lh 16px / ls 0
+                  - textStyle: Body Large/16 Regular · lh 16
+                  - content: Golden Beat #207
+                - **0.99 ETH** `TEXT` — 154×16
+                  - fill: #E89B55 (Text/Accent)
+                  - text: Roboto Mono 700 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Bold · lh 16
+                  - content: 0.99 ETH
+            - **Frame 220** `FRAME` — 258×300
+              - layout: row
+              - gap: 10
+              - padding: 28 4 24 4 (T R B L)
+              - fill: #241612 (Color/Surface Card)
+              - **NFT Artwork 10** `RECTANGLE` — 250×250
+                - fill: IMAGE (ref: 87580f2def9af0ce13f4b6f6ce17bb2449bcfc16)
+                - radius: 15
+            - **Frame 223** `FRAME` — 258×350
+              - layout: column
+              - gap: 12
+              - **Frame 221** `FRAME` — 258×300
+                - layout: row
+                - gap: 10
+                - padding: 20 4 32 4 (T R B L)
+                - fill: #241612 (Color/Surface Card)
+                - **NFT Artwork 11** `RECTANGLE` — 250×250
+                  - fill: IMAGE (ref: 87580f2def9af0ce13f4b6f6ce17bb2449bcfc16)
+                  - radius: 15
+              - **Frame 222** `FRAME` — 173×38
+                - layout: column
+                - gap: 6
+                - **Golden Signal #160** `TEXT` — 173×16
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 400 16px / lh 16px / ls 0
+                  - textStyle: Body Large/16 Regular · lh 16
+                  - content: Golden Signal #160
+                - **0.39 ETH** `TEXT` — 173×16
+                  - fill: #E89B55 (Text/Accent)
+                  - text: Roboto Mono 700 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Bold · lh 16
+                  - content: 0.39 ETH
+      - **Pagination** `FRAME` — 207×35
+        - layout: row
+        - gap: 8
+        - align: CENTER
+        - **Frame 224** `FRAME` — 35×35
+          - layout: column
+          - gap: 10
+          - justify: CENTER
+          - align: CENTER
+          - fill: #D28A4C (Color/Primary)
+          - radius: 4
+          - **1** `TEXT` — 11×16
+            - fill: #140D0A (Color/Ink)
+            - text: Roboto Mono 700 18px / lh 16px / ls 0
+            - textStyle: Body Large/18 Bold · lh 16
+            - content: 1
+        - **Frame 225** `FRAME` — 35×35
+          - layout: column
+          - gap: 10
+          - padding: 8 12 10 12 (T R B L)
+          - justify: CENTER
+          - align: CENTER
+          - stroke: #3F2319 (Color/Border)
+          - strokeWeight: 1
+          - strokeAlign: INSIDE
+          - radius: 4
+          - **2** `TEXT` — 11×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 18px / lh 16px / ls 0
+            - content: 2
+        - **Frame 226** `FRAME` — 35×35
+          - layout: column
+          - gap: 10
+          - padding: 8 12 10 12 (T R B L)
+          - justify: CENTER
+          - align: CENTER
+          - stroke: #3F2319 (Color/Border)
+          - strokeWeight: 1
+          - strokeAlign: INSIDE
+          - radius: 4
+          - **3** `TEXT` — 11×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 18px / lh 16px / ls 0
+            - content: 3
+        - **Frame 227** `FRAME` — 35×35
+          - layout: column
+          - gap: 10
+          - padding: 8 12 10 12 (T R B L)
+          - justify: CENTER
+          - align: CENTER
+          - stroke: #3F2319 (Color/Border)
+          - strokeWeight: 1
+          - strokeAlign: INSIDE
+          - radius: 4
+          - **4** `TEXT` — 11×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 18px / lh 16px / ls 0
+            - content: 4
+        - **Frame 228** `FRAME` — 35×35
+          - layout: row
+          - gap: 10
+          - padding: 8 8 8 8 (T R B L)
+          - stroke: #3F2319 (Color/Border)
+          - strokeWeight: 1
+          - strokeAlign: INSIDE
+          - radius: 4
+              - **Stroke 1** `VECTOR` — 5×11
+                - stroke: #F5F1EB (Color/Foreground)
+                - strokeWeight: 1.5
+                - strokeAlign: CENTER
+  - **Promos** `FRAME` — 1200×250
+    - layout: row
+    - gap: 28
+    - justify: SPACE_BETWEEN
+    - **Promo Card — Genesis Drops** `FRAME` — 586×250
+      - radius: 8
+      - **Rectangle 22** `RECTANGLE` — 586×250
+        - fill: #241612 (Color/Surface Card)
+      - **Limited-edition
+genesis drops** `TEXT` — 206×48
+        - fill: #F5F1EB (Color/Foreground)
+        - text: Roboto Mono 700 18px / lh 24px / ls 0
+        - textStyle: Body Large/18 Bold · lh 24
+        - content: Lançamentos gênesis
+de edição limitada
+      - **Colecione edições escassas diretamente dos criadores antes da revelação pública.** `TEXT` — 263×45
+        - fill: #CFB28C (Text/Secondary)
+        - text: Roboto Mono 400 14px / lh 24px / ls 0
+        - textStyle: Body/14 Regular · lh 24
+        - content: Colecione edições escassas diretamente dos criadores antes da revelação pública.
+      - **NFT Artwork 17** `RECTANGLE` — 292×250
+        - fill: IMAGE (ref: 8459204731e6eba9d474cbc8ebc37071360d3ba5)
+        - radius: 18
+      - **Group 16** `GROUP` — 140×40
+        - radius: 0 0 0 0
+        - **Rectangle 23** `RECTANGLE` — 140×40
+          - fill: #D28A4C (Color/Primary)
+          - radius: 6
+          - **Frame 15** `FRAME` — 86×20
+            - layout: row
+            - justify: SPACE_BETWEEN
+            - align: MAX
+            - **Explorar** `TEXT` — 68×20
+              - fill: #140D0A (Color/Ink)
+              - text: Roboto Mono 500 14px / lh 20px / ls 0
+              - textStyle: Body/14 Medium · lh 20
+              - content: Explorar
+                - **Stroke 1** `VECTOR` — 11×1
+                  - stroke: #140D0A (Color/Ink)
+                  - strokeWeight: 1.5
+                  - strokeAlign: CENTER
+                - **Stroke 3** `VECTOR` — 5×9
+                  - stroke: #140D0A (Color/Ink)
+                  - strokeWeight: 1.5
+                  - strokeAlign: CENTER
+        - **Rectangle 22** `RECTANGLE` — 586×250
+          - fill: #FBFBFB (Color/Background Elevated)
+        - **Ellipse 7** `ELLIPSE` — 256×256
+          - stroke: #D28A4C (Color/Primary)
+          - strokeWeight: 2
+          - strokeAlign: INSIDE
+        - **Ellipse 8** `ELLIPSE` — 256×256
+          - stroke: #D28A4C (Color/Primary)
+          - strokeWeight: 1
+          - strokeAlign: INSIDE
+    - **Promo Card — Curated Art** `FRAME` — 586×250
+      - radius: 8
+      - **Rectangle 24** `RECTANGLE` — 586×250
+        - fill: #241612 (Color/Surface Card)
+      - **Curated digital art
+& much more** `TEXT` — 260×48
+        - fill: #F5F1EB (Color/Foreground)
+        - text: Roboto Mono 700 18px / lh 24px / ls 0
+        - textStyle: Body Large/18 Bold · lh 24
+        - content: Arte digital selecionada
+e muito mais
+      - **NFT Artwork 16** `RECTANGLE` — 287×250
+        - fill: IMAGE (ref: 9df2ff42dd27ba657621c304557d1a855a4be6a5)
+        - radius: 17
+      - **Explore novos artistas, coleções verificadas e obras digitais que definem a cultura.** `TEXT` — 252×45
+        - fill: #CFB28C (Text/Secondary)
+        - text: Roboto Mono 400 14px / lh 24px / ls 0
+        - textStyle: Body/14 Regular · lh 24
+        - content: Explore novos artistas, coleções verificadas e obras digitais que definem a cult
+      - **Group 17** `GROUP` — 140×40
+        - radius: 0 0 0 0
+        - **Rectangle 23** `RECTANGLE` — 140×40
+          - fill: #D28A4C (Color/Primary)
+          - radius: 6
+          - **Frame 15** `FRAME` — 86×20
+            - layout: row
+            - justify: SPACE_BETWEEN
+            - align: MAX
+            - **Explorar** `TEXT` — 68×20
+              - fill: #140D0A (Color/Ink)
+              - text: Roboto Mono 500 14px / lh 20px / ls 0
+              - textStyle: Body/14 Medium · lh 20
+              - content: Explorar
+                - **Stroke 1** `VECTOR` — 11×1
+                  - stroke: #140D0A (Color/Ink)
+                  - strokeWeight: 1.5
+                  - strokeAlign: CENTER
+                - **Stroke 3** `VECTOR` — 5×9
+                  - stroke: #140D0A (Color/Ink)
+                  - strokeWeight: 1.5
+                  - strokeAlign: CENTER
+        - **Rectangle 22** `RECTANGLE` — 586×250
+          - fill: #FBFBFB (Color/Background Elevated)
+        - **Ellipse 7** `ELLIPSE` — 256×256
+          - stroke: #D28A4C (Color/Primary)
+          - strokeWeight: 2
+          - strokeAlign: INSIDE
+        - **Ellipse 8** `ELLIPSE` — 256×256
+          - stroke: #D28A4C (Color/Primary)
+          - strokeWeight: 1
+          - strokeAlign: INSIDE
+  - **Blog** `FRAME` — 1200×476
+    - layout: column
+    - gap: 40
+    - align: CENTER
+    - **Blog Section Header** `FRAME` — 1200×67
+      - layout: column
+      - gap: 12
+      - align: CENTER
+      - **Diário da Cunhagem** `TEXT` — 1200×37
+        - fill: #F5F1EB
+        - text: Roboto Mono 700 28px / lh 37px / ls 0
+        - content: Diário da Cunhagem
+      - **Histórias, guias e insights para colecionadores sobre o universo da propriedade digital.** `TEXT` — 1200×18
+        - fill: #CFB28C (Text/Secondary)
+        - text: Roboto Mono 400 14px / lh 18px / ls 0
+        - content: Histórias, guias e insights para colecionadores sobre o universo da propriedade 
+    - **Cards** `FRAME` — 1200×369
+      - layout: row
+      - gap: 24
+      - **Card 1** `FRAME` — 268×369
+        - layout: column
+        - fill: #241612 (Color/Surface Card)
+        - radius: 8
+        - **Image** `RECTANGLE` — 268×195
+          - fill: IMAGE (ref: 9df2ff42dd27ba657621c304557d1a855a4be6a5)
+        - **Content** `FRAME` — 268×174
+          - layout: column
+          - gap: 8
+          - padding: 12 16 16 16 (T R B L)
+          - **12 de setembro | Leitura de 6 min** `TEXT` — 236×32
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 12px / lh 16px / ls 0
+            - content: 12 de setembro  |  Leitura de 6 min
+          - **Como funciona a propriedade de NFTs** `TEXT` — 236×42
+            - fill: #F5F1EB
+            - text: Roboto Mono 700 16px / lh 21px / ls 0
+            - textStyle: Body Large/16 Bold · lh auto
+            - content: Como funciona a propriedade de NFTs
+          - **Aprenda a colecionar, negociar e verificar ativos digitais.** `TEXT` — 236×32
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 12px / lh 16px / ls 0
+            - content: Aprenda a colecionar, negociar e verificar ativos digitais.
+          - **CTA** `FRAME` — 74×16
+            - layout: row
+            - gap: 4
+            - **Ler mais** `TEXT` — 58×14
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 700 12px / lh 14px / ls 0
+              - textStyle: Caption/12 Bold
+              - content: Ler mais
+            - **→** `TEXT` — 12×16
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 400 12px / lh 16px / ls 0
+              - content: →
+      - **Card 2** `FRAME` — 268×369
+        - layout: column
+        - fill: #241612 (Color/Surface Card)
+        - radius: 8
+        - **Image** `RECTANGLE` — 268×195
+          - fill: IMAGE (ref: 8459204731e6eba9d474cbc8ebc37071360d3ba5)
+        - **Content** `FRAME` — 268×174
+          - layout: column
+          - gap: 8
+          - padding: 12 16 16 16 (T R B L)
+          - **13 de setembro | Leitura de 2 min** `TEXT` — 236×32
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 12px / lh 16px / ls 0
+            - content: 13 de setembro  |  Leitura de 2 min
+          - **10 artistas digitais para acompanhar** `TEXT` — 236×42
+            - fill: #F5F1EB
+            - text: Roboto Mono 700 16px / lh 21px / ls 0
+            - textStyle: Body Large/16 Bold · lh auto
+            - content: 10 artistas digitais para acompanhar
+          - **Conheça criadores que moldam a cultura digital.** `TEXT` — 236×32
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 12px / lh 16px / ls 0
+            - content: Conheça criadores que moldam a cultura digital.
+          - **CTA** `FRAME` — 74×16
+            - layout: row
+            - gap: 4
+            - **Ler mais** `TEXT` — 58×14
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 700 12px / lh 14px / ls 0
+              - textStyle: Caption/12 Bold
+              - content: Ler mais
+            - **→** `TEXT` — 12×16
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 400 12px / lh 16px / ls 0
+              - content: →
+      - **Card 3** `FRAME` — 268×369
+        - layout: column
+        - fill: #241612 (Color/Surface Card)
+        - radius: 8
+        - **Image** `RECTANGLE` — 268×195
+          - fill: IMAGE (ref: 2986a7cb16d09de8970824d2dd58bf0bb021702c)
+        - **Content** `FRAME` — 268×174
+          - layout: column
+          - gap: 8
+          - padding: 12 16 16 16 (T R B L)
+          - **15 de setembro | Leitura de 3 min** `TEXT` — 236×32
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 12px / lh 16px / ls 0
+            - content: 15 de setembro  |  Leitura de 3 min
+          - **Raridade, atributos e procedência** `TEXT` — 236×42
+            - fill: #F5F1EB
+            - text: Roboto Mono 700 16px / lh 21px / ls 0
+            - textStyle: Body Large/16 Bold · lh auto
+            - content: Raridade, atributos e procedência
+          - **Entenda raridade, procedência, direitos autorais e utilidade.** `TEXT` — 236×32
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 12px / lh 16px / ls 0
+            - content: Entenda raridade, procedência, direitos autorais e utilidade.
+          - **CTA** `FRAME` — 74×16
+            - layout: row
+            - gap: 4
+            - **Ler mais** `TEXT` — 58×14
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 700 12px / lh 14px / ls 0
+              - textStyle: Caption/12 Bold
+              - content: Ler mais
+            - **→** `TEXT` — 12×16
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 400 12px / lh 16px / ls 0
+              - content: →
+      - **Card 4** `FRAME` — 268×369
+        - layout: column
+        - fill: #241612 (Color/Surface Card)
+        - radius: 8
+        - **Image** `RECTANGLE` — 268×195
+          - fill: IMAGE (ref: 87580f2def9af0ce13f4b6f6ce17bb2449bcfc16)
+        - **Content** `FRAME` — 268×174
+          - layout: column
+          - gap: 8
+          - padding: 12 16 16 16 (T R B L)
+          - **15 de setembro | Leitura de 2 min** `TEXT` — 236×32
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 12px / lh 16px / ls 0
+            - content: 15 de setembro  |  Leitura de 2 min
+          - **Como proteger sua carteira** `TEXT` — 236×42
+            - fill: #F5F1EB
+            - text: Roboto Mono 700 16px / lh 21px / ls 0
+            - textStyle: Body Large/16 Bold · lh auto
+            - content: Como proteger sua carteira
+          - **Proteja sua carteira, seus ativos e sua identidade.** `TEXT` — 236×32
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 12px / lh 16px / ls 0
+            - content: Proteja sua carteira, seus ativos e sua identidade.
+          - **CTA** `FRAME` — 74×16
+            - layout: row
+            - gap: 4
+            - **Ler mais** `TEXT` — 58×14
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 700 12px / lh 14px / ls 0
+              - textStyle: Caption/12 Bold
+              - content: Ler mais
+            - **→** `TEXT` — 12×16
+              - fill: #E89B55 (Text/Accent)
+              - text: Roboto Mono 400 12px / lh 16px / ls 0
+              - content: →
+  - **Footer** `INSTANCE` — 1200×610
+    - layout: column
+    - **Frame 122** `FRAME` — 1200×250
+      - layout: column
+      - gap: 12
+      - padding: 32 32 32 32 (T R B L)
+      - fill: #241612 (Color/Surface Card)
+      - **Frame 100** `FRAME` — 1154×202
+        - layout: row
+        - gap: 28
+        - justify: SPACE_BETWEEN
+        - align: MAX
+        - **Frame 22** `FRAME` — 265×202
+          - layout: column
+          - gap: 10
+          - padding: 0 16 0 16 (T R B L)
+          - **Frame 92** `FRAME` — 233×202
+            - layout: column
+            - gap: 12
+            - **Frame 91** `FRAME` — 74×74
+              - layout: column
+              - gap: 10
+              - justify: CENTER
+              - align: CENTER
+              - fill: #D28A4C (Color/Primary)
+              - radius: 37
+              - **Service mark W** `TEXT` — 15×32
+                - fill: #140D0A (Color/Ink)
+                - text: Roboto Mono 700 24px / lh 32px / ls 0
+                - textStyle: Heading/24 Bold
+                - content: W
+            - **Segurança da carteira** `TEXT` — 233×16
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 700 17px / lh 16px / ls 0
+              - textStyle: Body Large/17 Bold
+              - content: Segurança da carteira
+            - **Proteja sua carteira e colecione arte digital verificada com confiança.** `TEXT` — 204×88
+              - fill: #CFB28C (Text/Secondary)
+              - text: Roboto Mono 400 14px / lh 22px / ls 0
+              - textStyle: Body/14 Regular · lh 22
+              - content: Proteja sua carteira e colecione arte digital verificada com confiança.
+        - **Rectangle 36** `RECTANGLE` — 1×202
+          - fill: #D28A4C (Color/Primary)
+        - **Frame 21** `FRAME` — 265×202
+          - layout: column
+          - gap: 10
+          - padding: 0 16 0 16 (T R B L)
+          - justify: CENTER
+          - **Frame 94** `FRAME` — 233×202
+            - layout: column
+            - gap: 12
+            - **Frame 93** `FRAME` — 74×74
+              - layout: column
+              - gap: 10
+              - justify: CENTER
+              - align: CENTER
+              - fill: #D28A4C (Color/Primary)
+              - radius: 37
+              - **Service mark C** `TEXT` — 15×32
+                - fill: #140D0A (Color/Ink)
+                - text: Roboto Mono 700 24px / lh 32px / ls 0
+                - textStyle: Heading/24 Bold
+                - content: C
+            - **Criadores em destaque** `TEXT` — 233×16
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 700 17px / lh 16px / ls 0
+              - textStyle: Body Large/17 Bold
+              - content: Criadores em destaque
+            - **Conheça artistas, estúdios e comunidades que moldam a cultura digital na rede.** `TEXT` — 204×88
+              - fill: #CFB28C (Text/Secondary)
+              - text: Roboto Mono 400 14px / lh 22px / ls 0
+              - textStyle: Body/14 Regular · lh 22
+              - content: Conheça artistas, estúdios e comunidades que moldam a cultura digital na rede.
+        - **Rectangle 38** `RECTANGLE` — 1×202
+          - fill: #D28A4C (Color/Primary)
+        - **Frame 20** `FRAME` — 265×202
+          - layout: column
+          - gap: 10
+          - padding: 0 16 0 16 (T R B L)
+          - **Frame 96** `FRAME` — 233×202
+            - layout: column
+            - gap: 12
+            - **Frame 95** `FRAME` — 74×74
+              - layout: column
+              - gap: 10
+              - justify: CENTER
+              - align: CENTER
+              - fill: #D28A4C (Color/Primary)
+              - radius: 37
+              - **Service mark D** `TEXT` — 15×32
+                - fill: #140D0A (Color/Ink)
+                - text: Roboto Mono 700 24px / lh 32px / ls 0
+                - textStyle: Heading/24 Bold
+                - content: D
+            - **Alertas de lançamentos** `TEXT` — 233×16
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 700 17px / lh 16px / ls 0
+              - textStyle: Body Large/17 Bold
+              - content: Alertas de lançamentos
+            - **Receba calendários de cunhagem, novidades de listas de acesso e análises do mercado.** `TEXT` — 204×88
+              - fill: #CFB28C (Text/Secondary)
+              - text: Roboto Mono 400 14px / lh 22px / ls 0
+              - textStyle: Body/14 Regular · lh 22
+              - content: Receba calendários de cunhagem, novidades de listas de acesso e análises do merc
+        - **Rectangle 39** `RECTANGLE` — 1×202
+          - fill: #D28A4C (Color/Primary)
+        - **Frame 99** `FRAME` — 357×202
+          - layout: column
+          - gap: 12
+          - padding: 0 16 0 16 (T R B L)
+          - align: CENTER
+          - **Frame 102** `FRAME` — 325×88
+            - layout: column
+            - gap: 16
+            - **Antecipe-se ao próximo lançamento** `TEXT` — 325×32
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 700 18px / lh 16px / ls 0
+              - textStyle: Body Large/18 Bold · lh 16
+              - content: Antecipe-se ao próximo lançamento
+            - **Frame 101** `FRAME` — 325×40
+              - layout: column
+              - align: MAX
+              - **Frame 98** `FRAME` — 325×40
+                - layout: row
+                - gap: 10
+                - padding: 12 0 12 12 (T R B L)
+                - justify: SPACE_BETWEEN
+                - align: CENTER
+                - fill: #38220F (Color/Surface Dark)
+                - radius: 6
+                - effects: DROP_SHADOW: x0 y0 blur20 spread0 #0A060473
+                - **digite seu e-mail...** `TEXT` — 169×16
+                  - fill: #B39463 (Color/Secondary)
+                  - text: Roboto Mono 400 14px / lh 16px / ls 0
+                  - textStyle: Body/14 Regular · lh 16
+                  - content: digite seu e-mail...
+                - **Frame 97** `FRAME` — 85×40
+                  - layout: row
+                  - gap: 10
+                  - padding: 12 4 12 16 (T R B L)
+                  - justify: CENTER
+                  - align: CENTER
+                  - fill: #D28A4C (Color/Primary)
+                  - radius: 0 6 6 0
+                  - **Enviar** `TEXT` — 65×16
+                    - fill: #140D0A (Color/Ink)
+                    - text: Roboto Mono 700 18px / lh 16px / ls 0
+                    - textStyle: Body Large/18 Bold · lh 16
+                    - content: Enviar
+          - **Get curated drops, creator stories, and collector rewards delivered to your inbo** `TEXT` — 325×89
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 400 13px / lh 22px / ls 0
+            - textStyle: Caption/13 Regular · lh 22
+            - content: Receba lançamentos selecionados, histórias de criadores e novidades do mercado.
+    - **Frame 121** `FRAME` — 1200×360
+      - layout: column
+      - **Frame 120** `FRAME` — 1200×88
+        - layout: column
+        - gap: 10
+        - padding: 32 32 32 32 (T R B L)
+        - justify: CENTER
+        - fill: #38220F (Color/Surface Dark)
+        - **Frame 119** `FRAME` — 1136×24
+          - layout: row
+          - gap: 92
+          - align: CENTER
+          - **Logo** `FRAME` — 211×34
+            - layout: row
+            - gap: 10
+            - padding: 8 0 8 0 (T R B L)
+            - align: CENTER
+            - **KURIO Wordmark** `TEXT` — 48×18
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 700 14px / lh 18px / ls 1.4
+              - textStyle: Body/14 Bold · lh auto
+              - content: KURIO
+          - **Frame 126** `FRAME` — 211×24
+            - layout: row
+            - gap: 10
+            - align: CENTER
+            - **Built for collectors,
+creators, and culture** `TEXT` — 219×44
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 400 14px / lh 22px / ls 0
+              - textStyle: Body/14 Regular · lh 22
+              - content: Feito para colecionadores,
+criadores e cultura
+          - **Frame 124** `FRAME` — 211×22
+            - layout: row
+            - gap: 10
+            - align: CENTER
+            - **contato@email.com** `TEXT` — 143×22
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 400 14px / lh 22px / ls 0
+              - textStyle: Body/14 Regular · lh 22
+              - content: contato@email.com
+          - **Frame 125** `FRAME` — 228×22
+            - layout: row
+            - gap: 10
+            - align: CENTER
+            - **+55 11 4002 8922** `TEXT` — 135×22
+              - fill: #F5F1EB (Color/Foreground)
+              - text: Roboto Mono 400 14px / lh 22px / ls 0
+              - textStyle: Body/14 Regular · lh 22
+              - content: +55 11 4002 8922
+      - **Frame 118** `FRAME` — 1200×272
+        - layout: column
+        - gap: 6
+        - align: CENTER
+        - **Frame 117** `FRAME` — 1200×236
+          - layout: column
+          - gap: 10
+          - padding: 32 32 32 32 (T R B L)
+          - fill: #241612 (Color/Surface Card)
+          - **Frame 116** `FRAME` — 1136×174
+            - layout: row
+            - gap: 124
+            - **Frame 103** `FRAME` — 179×174
+              - layout: column
+              - gap: 8
+              - **Meu perfil** `TEXT` — 179×16
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 700 18px / lh 16px / ls 0
+                - textStyle: Body Large/18 Bold · lh 16
+                - content: Meu perfil
+              - **My Profile
+My Collection
+Activity
+Creator Studio
+Watchlist** `TEXT` — 179×150
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 400 14px / lh 30px / ls 0
+                - textStyle: Body/14 Regular · lh 30
+                - content: Meu perfil
+Minha coleção
+Atividade
+Estúdio do criador
+Lista de interesse
+            - **Frame 104** `FRAME` — 179×174
+              - layout: column
+              - gap: 8
+              - **Central de ajuda** `TEXT` — 179×16
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 700 18px / lh 16px / ls 0
+                - textStyle: Body Large/18 Bold · lh 16
+                - content: Central de ajuda
+              - **Help Center
+How to Buy NFTs
+Wallet & Security
+Marketplace Policy
+Report an I** `TEXT` — 179×150
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 400 14px / lh 30px / ls 0
+                - textStyle: Body/14 Regular · lh 30
+                - content: Central de ajuda
+Como comprar NFTs
+Carteira e segurança
+Política do mercado
+Denu
+            - **Frame 105** `FRAME` — 179×174
+              - layout: column
+              - gap: 8
+              - **Coleções** `TEXT` — 179×16
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 700 18px / lh 16px / ls 0
+                - textStyle: Body Large/18 Bold · lh 16
+                - content: Coleções
+              - **Digital Art
+Photography
+Music
+3D Art
+Utility** `TEXT` — 179×150
+                - fill: #F5F1EB (Color/Foreground)
+                - text: Roboto Mono 400 14px / lh 30px / ls 0
+                - textStyle: Body/14 Regular · lh 30
+                - content: Arte digital
+Fotografia
+Música
+Arte 3D
+Utilidade
+            - **Frame 115** `FRAME` — 228×152
+              - layout: column
+              - gap: 32
+              - **Frame 114** `FRAME` — 190×66
+                - layout: column
+                - gap: 20
+                - **Redes sociais** `TEXT` — 190×16
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 700 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Bold · lh 16
+                  - content: Redes sociais
+                - **Frame 113** `FRAME` — 190×30
+                  - layout: row
+                  - gap: 10
+                  - align: CENTER
+                  - **Frame 108** `FRAME` — 30×30
+                    - layout: row
+                    - gap: 10
+                    - padding: 8 12 8 12 (T R B L)
+                    - stroke: #D28A4C (Color/Primary)
+                    - strokeWeight: 1
+                    - strokeAlign: OUTSIDE
+                    - radius: 4
+                    - **Facebook** `VECTOR` — 8×16
+                      - fill: #D28A4C (Color/Primary)
+                  - **Frame 109** `FRAME` — 30×30
+                    - layout: row
+                    - gap: 10
+                    - padding: 8 8 8 8 (T R B L)
+                    - stroke: #D28A4C (Color/Primary)
+                    - strokeWeight: 1
+                    - strokeAlign: OUTSIDE
+                    - radius: 4
+                    - **Instagram** `VECTOR` — 16×16
+                      - fill: #D28A4C (Color/Primary)
+                  - **Frame 110** `FRAME` — 30×30
+                    - layout: column
+                    - gap: 10
+                    - padding: 8 8 8 8 (T R B L)
+                    - stroke: #D28A4C (Color/Primary)
+                    - strokeWeight: 1
+                    - strokeAlign: OUTSIDE
+                    - radius: 4
+                    - **Twitter** `VECTOR` — 16×13
+                      - fill: #D28A4C (Color/Primary)
+                  - **Frame 111** `FRAME` — 30×30
+                    - layout: column
+                    - gap: 10
+                    - padding: 8 8 8 8 (T R B L)
+                    - stroke: #D28A4C (Color/Primary)
+                    - strokeWeight: 1
+                    - strokeAlign: OUTSIDE
+                    - radius: 4
+                    - **Linkedin** `VECTOR` — 16×15
+                      - fill: #D28A4C (Color/Primary)
+                  - **Frame 112** `FRAME` — 30×30
+                    - layout: column
+                    - gap: 10
+                    - padding: 8 4 8 6 (T R B L)
+                    - stroke: #D28A4C (Color/Primary)
+                    - strokeWeight: 1
+                    - strokeAlign: OUTSIDE
+                    - radius: 4
+                    - **Union** `BOOLEAN_OPERATION` — 19×14
+                      - fill: #D28A4C (Color/Primary)
+                      - **Vector** `VECTOR` — 19×14
+                        - stroke: #F5F1EB (Color/Foreground)
+                        - strokeWeight: 4.236024856567383
+                        - strokeAlign: INSIDE
+                      - **Vector** `VECTOR` — 6×6
+                        - fill: #F5F1EB (Color/Foreground)
+                        - radius: 2.1180124282836914
+              - **Frame 107** `FRAME` — 228×54
+                - layout: column
+                - gap: 12
+                - **Carteiras compatíveis** `TEXT` — 228×16
+                  - fill: #F5F1EB (Color/Foreground)
+                  - text: Roboto Mono 700 18px / lh 16px / ls 0
+                  - textStyle: Body Large/18 Bold · lh 16
+                  - content: Carteiras compatíveis
+                - **Frame 106** `FRAME` — 228×26
+                  - layout: row
+                  - gap: 10
+                  - padding: 8 0 8 8 (T R B L)
+                  - justify: CENTER
+                  - align: CENTER
+                  - fill: #38220F (Color/Surface Dark)
+                  - stroke: #55321F (Color/Border Soft)
+                  - strokeWeight: 1
+                  - strokeAlign: INSIDE
+                  - radius: 6
+                  - **Supported wallet brands** `TEXT` — 215×12
+                    - fill: #E89B55 (Text/Accent)
+                    - text: Roboto Mono 700 9px / lh 12px / ls 0.1
+                    - textStyle: Tiny/9 Bold
+                    - content: METAMASK  •  WALLETCONNECT  •  COINBASE
+        - **© 2026 Kurio. Propriedade digital para todos.** `TEXT` — 1200×30
+          - fill: #F5F1EB (Color/Foreground)
+          - text: Roboto Mono 400 14px / lh 30px / ls 0
+          - textStyle: Body/14 Regular · lh 30
+          - content: © 2026 Kurio. Propriedade digital para todos.

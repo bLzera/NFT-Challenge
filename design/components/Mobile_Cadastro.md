@@ -1,0 +1,234 @@
+# Mobile / Cadastro
+
+- **Mobile / Cadastro** `FRAME` — 414×896
+  - layout: column
+  - gap: 40
+  - padding: 80 28 24 28 (T R B L)
+  - fill: #140D0A (Color/Ink)
+  - radius: 40
+  - **Logo** `FRAME` — 358×136
+    - layout: row
+    - justify: CENTER
+    - align: CENTER
+    - **KURIO Wordmark** `TEXT` — 109×42
+      - fill: #F5F1EB (Color/Foreground)
+      - text: Roboto Mono 700 32px / lh 42px / ls 3.2
+      - textStyle: Display/32 Bold
+      - content: KURIO
+  - **Title** `FRAME` — 358×16
+    - layout: row
+    - justify: CENTER
+    - **Criar perfil de colecionador** `TEXT` — 303×16
+      - fill: #F5F1EB (Color/Foreground)
+      - text: Roboto Mono 700 18px / lh 16px / ls 0
+      - textStyle: Body Large/18 Bold · lh 16
+      - content: Criar perfil de colecionador
+  - **Form** `FRAME` — 358×236
+    - layout: column
+    - gap: 12
+    - **Container** `FRAME` — 358×50
+      - layout: row
+      - gap: 10
+      - padding: 0 16 0 16 (T R B L)
+      - justify: SPACE_BETWEEN
+      - align: CENTER
+      - stroke: #3F2319 (Color/Border)
+      - strokeWeight: 1
+      - strokeAlign: INSIDE
+      - radius: 10
+      - **User Name** `TEXT` — 127×16
+        - fill: #B39463 (Color/Secondary)
+        - text: Roboto Mono 400 14px / lh 16px / ls 0
+        - textStyle: Body/14 Regular · lh 16
+        - content: Nome de usuário
+    - **Frame 447** `FRAME` — 358×50
+      - layout: row
+      - gap: 10
+      - padding: 0 16 0 16 (T R B L)
+      - align: CENTER
+      - stroke: #3F2319 (Color/Border)
+      - strokeWeight: 1
+      - strokeAlign: INSIDE
+      - radius: 10
+      - **Digite seu e-mail** `TEXT` — 143×16
+        - fill: #B39463 (Color/Secondary)
+        - text: Roboto Mono 400 14px / lh 16px / ls 0
+        - textStyle: Body/14 Regular · lh 16
+        - content: Digite seu e-mail
+    - **Frame 449** `FRAME` — 358×50
+      - layout: column
+      - gap: 10
+      - padding: 0 16 0 16 (T R B L)
+      - justify: CENTER
+      - **Rectangle 49** `RECTANGLE` — 358×50
+        - stroke: #3F2319 (Color/Border)
+        - strokeWeight: 1
+        - strokeAlign: INSIDE
+        - radius: 10
+      - **Frame 448** `FRAME` — 326×18
+        - layout: row
+        - gap: 269
+        - justify: SPACE_BETWEEN
+        - **Senha** `TEXT` — 43×16
+          - fill: #B39463 (Color/Secondary)
+          - text: Roboto Mono 400 14px / lh 16px / ls 0
+          - textStyle: Body/14 Regular · lh 16
+          - content: Senha
+        - **Iconly/Curved/Hide** `INSTANCE` — 18×18
+          - radius: 10
+            - **Stroke 1** `VECTOR` — 11×10
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+            - **Stroke 3** `VECTOR` — 9×8
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+            - **Stroke 5** `VECTOR` — 4×4
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+            - **Stroke 7** `VECTOR` — 2×2
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+            - **Stroke 9** `VECTOR` — 12×12
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+    - **Frame 451** `FRAME` — 358×50
+      - layout: column
+      - padding: 0 16 0 16 (T R B L)
+      - justify: SPACE_BETWEEN
+      - **Group 98** `GROUP` — 358×50
+        - radius: 10
+        - **Rectangle 49** `RECTANGLE` — 358×50
+          - stroke: #3F2319 (Color/Border)
+          - strokeWeight: 1
+          - strokeAlign: INSIDE
+          - radius: 10
+      - **Frame 450** `FRAME` — 326×18
+        - layout: row
+        - gap: 185
+        - justify: SPACE_BETWEEN
+        - align: CENTER
+        - **Confirmar senha** `TEXT` — 127×16
+          - fill: #B39463 (Color/Secondary)
+          - text: Roboto Mono 400 14px / lh 16px / ls 0
+          - textStyle: Body/14 Regular · lh 16
+          - content: Confirmar senha
+        - **Iconly/Curved/Hide** `INSTANCE` — 18×18
+          - radius: 10
+            - **Stroke 1** `VECTOR` — 11×10
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+            - **Stroke 3** `VECTOR` — 9×8
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+            - **Stroke 5** `VECTOR` — 4×4
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+            - **Stroke 7** `VECTOR` — 2×2
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+            - **Stroke 9** `VECTOR` — 12×12
+              - stroke: #55321F (Color/Border Soft)
+              - strokeWeight: 1.5
+              - strokeAlign: CENTER
+  - **Create Profile Button** `FRAME` — 358×60
+    - layout: row
+    - justify: CENTER
+    - align: CENTER
+    - fill: #D28A4C (Color/Primary)
+    - radius: 10
+    - **Criar perfil** `TEXT` — 116×16
+      - fill: #140D0A (Color/Ink)
+      - text: Roboto Mono 700 16px / lh 16px / ls 0
+      - textStyle: Body Large/16 Bold · lh 16
+      - content: Criar perfil
+  - **Mobile Social Block** `INSTANCE` — 358×124
+    - layout: column
+    - gap: 12
+    - **Frame 4** `FRAME` — 358×16
+      - layout: row
+      - gap: 10
+      - align: CENTER
+      - **Line 7** `LINE` — 110×0
+        - stroke: #3F2319 (Color/Border)
+        - strokeWeight: 1
+        - strokeAlign: CENTER
+      - **Ou continue com** `TEXT` — 118×16
+        - fill: #F5F1EB (Color/Foreground)
+        - text: Roboto Mono 400 13px / lh 16px / ls 0
+        - textStyle: Caption/13 Regular · lh 16
+        - content: Ou continue com
+      - **Line 8** `LINE` — 110×0
+        - stroke: #3F2319 (Color/Border)
+        - strokeWeight: 1
+        - strokeAlign: CENTER
+    - **Frame 370** `FRAME` — 358×96
+      - layout: column
+      - gap: 16
+      - **Social Button** `INSTANCE` — 358×40
+        - layout: row
+        - justify: CENTER
+        - align: CENTER
+        - stroke: #3F2319 (Color/Border)
+        - strokeWeight: 1
+        - strokeAlign: INSIDE
+        - radius: 5
+        - **Content** `FRAME` — 189×20
+          - layout: row
+          - gap: 12
+          - align: CENTER
+              - **Vector** `VECTOR` — 15×8
+                - fill: #59C36A (Logo/Google Green)
+              - **Vector** `VECTOR` — 6×6
+                - fill: #00A66C (Color/Success)
+                      - **Vector** `VECTOR` — 5×10
+                        - fill: #FFDA2D (Logo/Google Yellow)
+              - **Vector** `VECTOR` — 11×10
+                - fill: #4086F4 (Logo/Google Blue)
+              - **Vector** `VECTOR` — 10×10
+                - fill: #4175DF (Logo/Blue)
+              - **Vector** `VECTOR` — 15×8
+                - fill: #FF641A (Logo/Orange)
+              - **Vector** `VECTOR` — 7×6
+                - fill: #F0805F (Text/Coral)
+          - **Continuar com Google** `TEXT` — 157×16
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 13px / lh 16px / ls 0
+            - textStyle: Caption/13 Medium
+            - content: Continuar com Google
+      - **Social Button** `INSTANCE` — 358×40
+        - layout: row
+        - justify: CENTER
+        - align: CENTER
+        - stroke: #3F2319 (Color/Border)
+        - strokeWeight: 1
+        - strokeAlign: INSIDE
+        - radius: 5
+        - **Content** `FRAME` — 204×20
+          - layout: row
+          - gap: 12
+          - align: CENTER
+            - **Vector** `VECTOR` — 10×20
+              - fill: #3B5999 (Logo/Facebook)
+          - **Continuar com Facebook** `TEXT` — 172×16
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 500 13px / lh 16px / ls 0
+            - textStyle: Caption/13 Medium
+            - content: Continuar com Facebook
+  - **Login Link** `FRAME` — 358×20
+    - layout: row
+    - justify: CENTER
+    - align: MAX
+    - **Já tem uma conta? Entre** `TEXT` — 208×20
+      - fill: #CFB28C (Text/Secondary)
+      - text: Roboto Mono 400 15px / lh 20px / ls 0
+      - textStyle: Body/15 Regular · lh 16
+      - content: Já tem uma conta? Entre

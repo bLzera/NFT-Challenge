@@ -1,0 +1,352 @@
+# Mobile / Pagamento
+
+- **Mobile / Pagamento** `FRAME` — 414×896
+  - layout: column
+  - padding: 32 28 32 28 (T R B L)
+  - fill: #140D0A (Color/Ink)
+  - radius: 40
+  - **Content** `FRAME` — 358×832
+    - layout: column
+    - gap: 16
+    - justify: SPACE_BETWEEN
+    - **Frame 442** `FRAME` — 358×605
+      - layout: column
+      - gap: 16
+          - **Ellipse 38** `ELLIPSE` — 35×35
+            - fill: #2F1D15 (Color/Surface Raised)
+            - stroke: #3F2319 (Color/Border)
+            - strokeWeight: 1
+            - strokeAlign: INSIDE
+              - **Stroke 1** `VECTOR` — 6×12
+                - stroke: #B39463 (Color/Secondary)
+                - strokeWeight: 1.5
+                - strokeAlign: CENTER
+        - **Pagamento com carteira** `TEXT` — 265×16
+          - fill: #F5F1EB (Color/Foreground)
+          - text: Roboto Mono 700 20px / lh 16px / ls 0
+          - textStyle: Title/20 Bold · lh 16
+          - content: Pagamento com carteira
+      - **Frame 2** `FRAME` — 358×16
+        - layout: row
+        - gap: 122
+        - justify: SPACE_BETWEEN
+        - align: CENTER
+        - **Carteira conectada** `TEXT` — 173×16
+          - fill: #F5F1EB (Color/Foreground)
+          - text: Roboto Mono 700 16px / lh 16px / ls 0
+          - textStyle: Body Large/16 Bold · lh 16
+          - content: Carteira conectada
+        - **Trocar carteira** `TEXT` — 127×16
+          - fill: #E89B55 (Text/Accent)
+          - text: Roboto Mono 700 14px / lh 16px / ls 0
+          - textStyle: Body/14 Bold · lh 16
+          - content: Trocar carteira
+      - **Wallet Cards** `FRAME` — 358×206
+        - layout: column
+        - gap: 20
+          - **Rectangle 102** `RECTANGLE` — 358×93
+            - fill: #241612 (Color/Surface Card)
+            - radius: 14
+            - effects: DROP_SHADOW: x0 y20 blur20 spread0 #0A060473
+          - **Reserva** `TEXT` — 68×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 700 16px / lh 16px / ls 0
+            - textStyle: Body Large/16 Bold · lh 16
+            - content: Reserva
+          - **nova.kurio.eth Rede Polygon** `TEXT` — 201×44
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 400 14px / lh 22px / ls 0
+            - textStyle: Body/14 Regular · lh 22
+            - content: nova.kurio.eth
+Rede Polygon
+            - **Ellipse 46** `ELLIPSE` — 3×3
+              - fill: #B39463 (Color/Secondary)
+            - **Ellipse 47** `ELLIPSE` — 3×3
+              - fill: #B39463 (Color/Secondary)
+            - **Ellipse 48** `ELLIPSE` — 3×3
+              - fill: #B39463 (Color/Secondary)
+            - **Ellipse 34** `ELLIPSE` — 16×16
+              - stroke: #D28A4C (Color/Primary)
+              - strokeWeight: 1.2000000476837158
+              - strokeAlign: INSIDE
+            - **Ellipse 35** `ELLIPSE` — 8×8
+              - fill: #D28A4C (Color/Primary)
+          - **Rectangle 106** `RECTANGLE` — 358×93
+            - fill: #241612 (Color/Surface Card)
+            - radius: 14
+          - **Principal** `TEXT` — 87×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 700 16px / lh 16px / ls 0
+            - textStyle: Body Large/16 Bold · lh 16
+            - content: Principal
+          - **0xA91F…E82C
+Ethereum Mainnet** `TEXT` — 203×44
+            - fill: #CFB28C (Text/Secondary)
+            - text: Roboto Mono 400 14px / lh 22px / ls 0
+            - textStyle: Body/14 Regular · lh 22
+            - content: 0xA91F…E82C
+Rede principal Ethereum
+            - **Ellipse 46** `ELLIPSE` — 3×3
+              - fill: #B39463 (Color/Secondary)
+            - **Ellipse 47** `ELLIPSE` — 3×3
+              - fill: #B39463 (Color/Secondary)
+            - **Ellipse 48** `ELLIPSE` — 3×3
+              - fill: #B39463 (Color/Secondary)
+          - **Ellipse 46** `ELLIPSE` — 16×16
+            - stroke: #55321F (Color/Border Soft)
+            - strokeWeight: 1.2000000476837158
+            - strokeAlign: INSIDE
+      - **Wallet Options** `FRAME` — 359×259
+        - layout: column
+        - gap: 16
+        - **Carteira e rede** `TEXT` — 145×16
+          - fill: #F5F1EB (Color/Foreground)
+          - text: Roboto Mono 700 16px / lh 16px / ls 0
+          - textStyle: Body Large/16 Bold · lh 16
+          - content: Carteira e rede
+          - **Rectangle 105** `RECTANGLE` — 359×65
+            - fill: #241612 (Color/Surface Card)
+            - radius: 15
+            - effects: DROP_SHADOW: x0 y0 blur20 spread0 #0A060473
+          - **Ellipse 44** `ELLIPSE` — 40×40
+            - fill: #2F1D15 (Color/Surface Raised)
+            - stroke: #3F2319 (Color/Border)
+            - strokeWeight: 1
+            - strokeAlign: INSIDE
+          - **WalletConnect** `TEXT` — 110×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 14px / lh 16px / ls 0
+            - textStyle: Body/14 Regular · lh 16
+            - content: WalletConnect
+          - **Ellipse 45** `ELLIPSE` — 16×16
+            - stroke: #55321F (Color/Border Soft)
+            - strokeWeight: 1.2000000476837158
+            - strokeAlign: INSIDE
+              - **Vector** `VECTOR` — 17×17
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 17×17
+                - fill: #ED1B2E (Color/Error)
+              - **Vector** `VECTOR` — 5×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 5×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 6×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 6×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 6×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 6×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 5×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 4×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 6×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 2×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 2×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 1×0
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 3×3
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 3×3
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 2×4
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 2×4
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 3×3
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 3×3
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 3×4
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 3×4
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 3×4
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 3×4
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 1×2
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 3×3
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 3×3
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 1×1
+                - fill: #ED1B2E (Color/Error)
+              - **Vector** `VECTOR` — 5×4
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 5×4
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 3×3
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×1
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×1
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×1
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×1
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×1
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×2
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×1
+                - fill: #E3A44E (Color/Amber)
+              - **Vector** `VECTOR` — 1×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 0×0
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 1×1
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 2×3
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 2×3
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+              - **Vector** `VECTOR` — 2×3
+                - fill: #FFFFFF (Color/White)
+              - **Vector** `VECTOR` — 2×3
+                - stroke: #140D0A (Color/Ink)
+                - strokeWeight: 0.2160000056028366
+                - strokeAlign: CENTER
+          - **Wallet mark W** `TEXT` — 9×18
+            - fill: #E89B55 (Text/Accent)
+            - text: Roboto Mono 700 14px / lh 18px / ls 0
+            - textStyle: Body/14 Bold · lh auto · ls 0%
+            - content: W
+          - **Rectangle 104** `RECTANGLE` — 359×65
+            - fill: #241612 (Color/Surface Card)
+            - radius: 15
+            - effects: DROP_SHADOW: x0 y0 blur20 spread0 #0A060473
+          - **Ellipse 42** `ELLIPSE` — 40×40
+            - fill: #2F1D15 (Color/Surface Raised)
+            - stroke: #3F2319 (Color/Border)
+            - strokeWeight: 1
+            - strokeAlign: INSIDE
+          - **MetaMask** `TEXT` — 68×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 14px / lh 16px / ls 0
+            - textStyle: Body/14 Regular · lh 16
+            - content: MetaMask
+          - **Ellipse 43** `ELLIPSE` — 16×16
+            - stroke: #55321F (Color/Border Soft)
+            - strokeWeight: 1.2000000476837158
+            - strokeAlign: INSIDE
+              - **Vector** `VECTOR` — 15×17
+                - fill: #03A9F4 (Logo/Light Blue)
+              - **Vector** `VECTOR` — 17×19
+                - fill: #283593 (Logo/Indigo)
+          - **Wallet mark M** `TEXT` — 9×18
+            - fill: #E89B55 (Text/Accent)
+            - text: Roboto Mono 700 14px / lh 18px / ls 0
+            - textStyle: Body/14 Bold · lh auto · ls 0%
+            - content: M
+          - **Rectangle 88** `RECTANGLE` — 359×65
+            - fill: #241612 (Color/Surface Card)
+            - radius: 15
+            - effects: DROP_SHADOW: x0 y0 blur40 spread0 #0A060473
+          - **Ellipse 40** `ELLIPSE` — 40×40
+            - fill: #2F1D15 (Color/Surface Raised)
+            - stroke: #3F2319 (Color/Border)
+            - strokeWeight: 1
+            - strokeAlign: INSIDE
+          - **Coinbase Wallet** `TEXT` — 127×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 400 14px / lh 16px / ls 0
+            - textStyle: Body/14 Regular · lh 16
+            - content: Coinbase Wallet
+            - **Ellipse 34** `ELLIPSE` — 16×16
+              - stroke: #D28A4C (Color/Primary)
+              - strokeWeight: 1.2000000476837158
+              - strokeAlign: INSIDE
+            - **Ellipse 35** `ELLIPSE` — 8×8
+              - fill: #D28A4C (Color/Primary)
+              - **Stroke 1** `VECTOR` — 6×5
+                - stroke: #D28A4C (Color/Primary)
+                - strokeWeight: 1.5
+                - strokeAlign: CENTER
+              - **Stroke 3** `VECTOR` — 1×1
+                - stroke: #D28A4C (Color/Primary)
+                - strokeWeight: 1.5
+                - strokeAlign: CENTER
+              - **Stroke 5** `VECTOR` — 4×1
+                - stroke: #D28A4C (Color/Primary)
+                - strokeWeight: 1.5
+                - strokeAlign: CENTER
+              - **Stroke 7** `VECTOR` — 19×17
+                - stroke: #D28A4C (Color/Primary)
+                - strokeWeight: 1.5
+                - strokeAlign: CENTER
+      - **Total Row** `FRAME` — 358×16
+        - layout: row
+        - justify: MAX
+        - **Frame 3** `FRAME` — 184×16
+          - layout: row
+          - gap: 28
+          - align: CENTER
+          - **Total:** `TEXT` — 58×16
+            - fill: #F5F1EB (Color/Foreground)
+            - text: Roboto Mono 700 16px / lh 16px / ls 0
+            - textStyle: Body Large/16 Bold · lh 16
+            - content: Total:
+          - **8.936 ETH** `TEXT` — 98×16
+            - fill: #E89B55 (Text/Accent)
+            - text: Roboto Mono 700 18px / lh 16px / ls 0
+            - textStyle: Body Large/18 Bold · lh 16
+            - content: 8.936 ETH
+    - **Confirm Button** `FRAME` — 358×60
+      - layout: row
+      - justify: CENTER
+      - align: CENTER
+      - fill: GRADIENT_LINEAR [#D28A4C → #D28A4Ccc]
+      - radius: 40
+      - **Confirmar compra** `TEXT` — 145×16
+        - fill: #140D0A (Color/Ink)
+        - text: Roboto Mono 700 15px / lh 16px / ls 0
+        - textStyle: Body/15 Bold · lh 16
+        - content: Confirmar compra
