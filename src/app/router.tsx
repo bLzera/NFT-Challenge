@@ -1,4 +1,5 @@
 import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
+import { listNftsQuerySchema, type ListNftsQuery } from "@/contracts";
 import { AppShell } from "@/app/shell";
 import { NotFound } from "@/app/not-found";
 import { RouteError } from "@/app/route-error";
@@ -6,6 +7,7 @@ import { PlaceholderPage } from "@/app/placeholder-page";
 import { requireAuth } from "@/app/require-auth";
 import { redirectIfAuthenticated } from "@/features/auth/guard";
 import { LoginScreen, RegisterScreen } from "@/features/auth/auth-screens";
+import { CatalogScreen } from "@/features/catalog/catalog-screen";
 
 /** Search param de retorno ao fluxo (§3): para onde voltar após autenticar. */
 interface AuthSearch {
@@ -37,9 +39,15 @@ const rootRoute = createRootRoute({
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: () => (
-    <PlaceholderPage title="Catálogo" description="A descoberta de NFTs chega na feature `catalog`." />
-  ),
+  // Reaproveita `listNftsQuerySchema` (parse parcial) como fonte única do shape de busca (catalog
+  // spec §Roteamento): normaliza/coage (page/pageSize string→number, sort default) sem redeclarar
+  // os campos. Chaves ausentes/"" ficam fora do objeto resultante, casando com `normalizeNftQuery`.
+  // Tipo de retorno anotado como `Partial`: em runtime o schema sempre preenche os defaults
+  // (`page`/`pageSize`/`sort`), mas marcá-los opcionais no tipo permite `<Link to="/">` sem exigir
+  // `search` explícito em todo lugar (ex.: header, 404) — mesmo padrão usado por `/login`/`/register`.
+  validateSearch: (search: Record<string, unknown>): Partial<ListNftsQuery> =>
+    listNftsQuerySchema.parse(search),
+  component: CatalogScreen,
 });
 
 const loginRoute = createRoute({
@@ -86,6 +94,18 @@ const favoritesRoute = createRoute({
   component: () => <PlaceholderPage title="Favoritos" />,
 });
 
+/**
+ * Rota placeholder do detalhe (decisão A8 do `catalog.spec.md`, confirmada pela thread principal):
+ * `nft-detail` ainda não existe, mas os cards do catálogo precisam de um `Link` tipado de verdade
+ * para `/nft/$idOrSlug`. Registrada aqui como esqueleto — a feature `nft-detail` troca o
+ * `component` por sua implementação, sem recriar a rota.
+ */
+const nftDetailRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/nft/$idOrSlug",
+  component: () => <PlaceholderPage title="Detalhe do NFT" />,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   loginRoute,
@@ -94,6 +114,7 @@ const routeTree = rootRoute.addChildren([
   profileRoute,
   walletsRoute,
   favoritesRoute,
+  nftDetailRoute,
 ]);
 
 export const router = createRouter({
