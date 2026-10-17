@@ -1,5 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+// Roboto Mono self-hosted (sem CDN em runtime — §8/§10/§12). Única família do app.
+import "@fontsource/roboto-mono/400.css";
+import "@fontsource/roboto-mono/500.css";
+import "@fontsource/roboto-mono/700.css";
 import "./index.css";
 import { AppProviders } from "@/app/providers";
 import { env } from "@/config/env";

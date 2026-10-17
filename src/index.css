@@ -2,50 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Tokens de design — paleta Kurio (dark-only). Hexes de `design/tokens.md` convertidos para HSL e
+ * guardados nas CSS vars do shadcn (indireção `hsl(var(--token))`). O app é sempre dark: a classe
+ * `.dark` fica fixa no <html> e `:root` é espelhado para robustez. Cores específicas do design sem
+ * equivalente semântico vivem como tokens próprios no tailwind.config (theme.extend.colors).
+ */
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
-  }
-
+  :root,
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --background: 18 33% 6%; /* Color/Ink      #140D0A */
+    --foreground: 36 33% 94%; /* Color/Foreground #F5F1EB */
+    --card: 13 33% 11%; /* Color/Surface Card #241612 */
+    --card-foreground: 36 33% 94%;
+    --popover: 13 33% 11%;
+    --popover-foreground: 36 33% 94%;
+    --primary: 28 60% 56%; /* Color/Primary  #D28A4C */
+    --primary-foreground: 18 33% 6%; /* Color/Ink */
+    --secondary: 19 38% 13%; /* Color/Surface Raised #2F1D15 */
+    --secondary-foreground: 36 33% 94%;
+    --muted: 19 38% 13%;
+    --muted-foreground: 37 34% 55%; /* Color/Secondary #B39463 */
+    --accent: 28 58% 14%; /* Color/Surface Dark #38220F */
+    --accent-foreground: 36 33% 94%;
+    --destructive: 355 85% 52%; /* Color/Error #ED1B2E */
+    --destructive-foreground: 36 33% 94%;
+    --border: 16 43% 17%; /* Color/Border #3F2319 */
+    --input: 16 43% 17%;
+    --ring: 28 60% 56%; /* Color/Primary — anel de foco */
+    --radius: 0.5rem;
   }
 }
 
@@ -53,8 +38,11 @@
   * {
     @apply border-border;
   }
+  html {
+    color-scheme: dark;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 }
 
