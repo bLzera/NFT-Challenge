@@ -22,10 +22,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
+import { isQuoteStale } from "@/lib/cart/quote-stale";
+import { useCart } from "@/lib/cart/use-cart";
+import { useQuote } from "@/lib/cart/use-quote";
 import { CartQuantityStepper } from "./cart-quantity-stepper";
-import { isQuoteStale } from "./quote-stale";
-import { useCart } from "./use-cart";
-import { useQuote } from "./use-quote";
 import { useRemoveCartItem } from "./use-remove-cart-item";
 import { useUpdateCartItem } from "./use-update-cart-item";
 

@@ -10,6 +10,7 @@ import { LoginScreen, RegisterScreen } from "@/features/auth/auth-screens";
 import { CatalogScreen } from "@/features/catalog/catalog-screen";
 import { NftDetailScreen } from "@/features/nft-detail/nft-detail-screen";
 import { CartScreen } from "@/features/cart/cart-screen";
+import { CheckoutScreen } from "@/features/checkout/checkout-screen";
 
 /** Search param de retorno ao fluxo (§3): para onde voltar após autenticar. */
 interface AuthSearch {
@@ -77,15 +78,28 @@ const cartRoute = createRoute({
 });
 
 /**
- * `/checkout` registrada agora como placeholder privado (A2 do cart.spec.md), mesmo padrão de
- * `/nft`: o CTA de checkout da `cart` precisa de um `Link` tipado já existente. A feature
- * `checkout` troca só o `component` depois, sem recriar a rota.
+ * `/checkout` registrada pela `cart` como placeholder privado (A1 do checkout.spec.md, A2 do
+ * cart.spec.md); a feature `checkout` troca o `component` pela implementação real, sem recriar a
+ * rota. Permanece privada via `requireAuth`.
  */
 const checkoutRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/checkout",
   beforeLoad: ({ location }) => requireAuth(location.href),
-  component: () => <PlaceholderPage title="Pagamento" />,
+  component: CheckoutScreen,
+});
+
+/**
+ * `/order/$orderId` registrada agora como placeholder privado (A2 do checkout.spec.md), mesmo
+ * padrão de `/nft`/`/checkout`: o pós-sucesso do checkout precisa de um `navigate`/`Link` tipado já
+ * existente. A feature `order-confirmation` troca depois só o `component` (lê `getOrder`/
+ * `keys.order.detail`), sem recriar a rota. Param `$orderId` casa com `getOrderParamsSchema.orderId`.
+ */
+const orderRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/order/$orderId",
+  beforeLoad: ({ location }) => requireAuth(location.href),
+  component: () => <PlaceholderPage title="Pedido" />,
 });
 
 const profileRoute = createRoute({
@@ -127,6 +141,7 @@ const routeTree = rootRoute.addChildren([
   registerRoute,
   cartRoute,
   checkoutRoute,
+  orderRoute,
   profileRoute,
   walletsRoute,
   favoritesRoute,
