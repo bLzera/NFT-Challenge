@@ -9,6 +9,7 @@ import { redirectIfAuthenticated } from "@/features/auth/guard";
 import { LoginScreen, RegisterScreen } from "@/features/auth/auth-screens";
 import { CatalogScreen } from "@/features/catalog/catalog-screen";
 import { NftDetailScreen } from "@/features/nft-detail/nft-detail-screen";
+import { CartScreen } from "@/features/cart/cart-screen";
 
 /** Search param de retorno ao fluxo (§3): para onde voltar após autenticar. */
 interface AuthSearch {
@@ -71,7 +72,20 @@ const registerRoute = createRoute({
 const cartRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/cart",
-  component: () => <PlaceholderPage title="Carrinho" />,
+  // Pública (A1 do cart.spec.md): visitante monta o carrinho sem sessão; o gate fica no checkout.
+  component: CartScreen,
+});
+
+/**
+ * `/checkout` registrada agora como placeholder privado (A2 do cart.spec.md), mesmo padrão de
+ * `/nft`: o CTA de checkout da `cart` precisa de um `Link` tipado já existente. A feature
+ * `checkout` troca só o `component` depois, sem recriar a rota.
+ */
+const checkoutRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/checkout",
+  beforeLoad: ({ location }) => requireAuth(location.href),
+  component: () => <PlaceholderPage title="Pagamento" />,
 });
 
 const profileRoute = createRoute({
@@ -112,6 +126,7 @@ const routeTree = rootRoute.addChildren([
   loginRoute,
   registerRoute,
   cartRoute,
+  checkoutRoute,
   profileRoute,
   walletsRoute,
   favoritesRoute,
