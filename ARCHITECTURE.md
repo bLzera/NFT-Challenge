@@ -1,7 +1,119 @@
-# Architecture — decisões transversais
+# Architecture
 
-Documento vivo. Registra decisões/edições que atravessam mais de uma feature (fora do escopo normal
-de uma spec única), para rastreabilidade na Fase 7.
+Documento vivo. **Parte 1 — Visão de sistema** descreve as decisões que valem para todo o app
+(contratos, transporte, sessão, carrinho, cache, tempo real, limitações). **Parte 2 — Decisões por
+feature** registra edições transversais específicas (fora do escopo de uma spec única). Dependências
+fora da stack obrigatória: [`DEPENDENCIES.md`](DEPENDENCIES.md). Fluxos e cenários: [`README.md`](README.md).
+
+---
+
+# Parte 1 — Visão de sistema
+
+## Princípio central: fonte única da verdade, sem backend
+
+Não há servidor real. Um **store em memória** (`src/mock/store.ts`), persistido em `localStorage` por
+chave `scenario:seed`, é a verdade compartilhada por **REST (MSW)** e pelo **servidor-socket simulado**
+(`@mswjs/socket.io-binding`). Tudo — latências, falhas, mudanças de preço, ciclo de vida de pedido — é
+roteiro determinístico semeado (`seed`), descrito declarativamente em `src/mock/scenarios/registry.ts`
+e aplicado por `src/mock/scenarios/apply.ts`. **Nenhuma resposta fictícia nasce fora da camada de
+mock** (critério eliminatório do desafio): componentes/hooks/axios nunca fabricam dado num `catch`.
+
+Os mocks ficam ativos **também no build de produção** (`VITE_ENABLE_MOCKS` default on) — é o que
+viabiliza o deploy estático na Vercel.
+
+## Contratos tipados (fonte única de shapes)
+
+`src/contracts/` define schemas **Zod** → tipos inferidos (`Nft`, `Cart`, `Quote`, `Order`, `Session`,
+`Favorites`, eventos, erros…). Esses tipos são a única fonte de formato, consumidos por mock, cliente
+HTTP **e** UI — a interface nunca redeclara shapes; importa de `@/contracts`. As respostas do cliente
+HTTP são validadas em runtime contra os schemas (um payload fora do contrato falha cedo, não silencioso).
+
+**Valores ETH** são **strings decimais** (`decimal.js`), nunca float; quantidades são inteiras. A UI
+não faz aritmética de dinheiro — exibe/encaminha strings e usa helpers de `value-types`
+(`formatEth`/`addEth`).
+
+## Transporte
+
+- **REST** — base `/api` (Axios). O interceptor injeta `Authorization: Bearer mock-token:<userId>:<expEpoch>`
+  a partir do token em `localStorage` (`nft-auth:v1:token`). Funções tipadas 1:1 com os handlers em
+  `src/lib/http/api.ts`; erros rejeitam como `HttpError` com `detail: ApiRequestError` (união
+  `api`|`network`), ramificável por `isApiCode(detail, "...")`.
+- **Socket.IO** — URL lógica fixa `ws://nft-marketplace.mock` + path `/socket.io/` (`src/config/socket.ts`),
+  interceptada pelo WebSocket interceptor do MSW — **sem rede real**. O cliente força
+  `transports: ["websocket"]` (o MSW não intercepta o fallback long-polling) e `autoConnect: false`
+  (quem orquestra a sessão decide quando conectar, após resolver o token).
+
+## Política de sessão e isolamento por usuário
+
+A sessão é **derivada do cache** `keys.session` (`GET /api/auth/session`); o token sobrevive a refresh
+via `localStorage`. `src/lib/auth/session.ts` orquestra login/registro/logout:
+
+- **Login/registro** fazem teardown **incondicional** antes de adotar a nova sessão (desconecta socket +
+  `queryClient.clear()`) e então reconectam o socket com o novo token — garantindo **isolamento por
+  usuário** (nenhum dado do usuário anterior vaza).
+- **401 / sessão expirada** → o interceptor limpa o token e o `onUnauthorized` faz o teardown completo
+  e zera `keys.session` → a UI reflete logout.
+- O **carrinho de visitante** é mesclado à conta ao autenticar (handlers de sessão), preservando itens.
+
+## Estado do carrinho e cotação
+
+- O carrinho é particionado por **dono** (`guest` vs `userId`) no store. A UI só adiciona ao carrinho
+  logado (visitante vê link de login).
+- A **cotação** é chaveada por `keys.quote(cartVersion, couponCode?)` — por `cartVersion`, não pelo
+  conteúdo. Cupom inválido/expirado é representado **inline** (`quote.coupon.valid=false`,
+  `coupon.reason`), não como erro.
+- **Cenário crítico (preço muda no socket):** a UI compara a `version` cotada com a do carrinho e
+  **bloqueia a confirmação** de uma cotação desatualizada até reconfirmar; esgotamento durante a compra
+  é recusado como `conflict(availability)` na criação do pedido.
+- **Idempotência de pedido:** o checkout gera um `idempotencyKey` e o reusa no retry (mutations
+  `retry: 0`); o store devolve o **mesmo** pedido para a mesma chave — clique repetido/timeout não
+  duplicam.
+
+## Estratégia de cache (TanStack Query)
+
+- **Keys factory** (`src/lib/query/keys.ts`) centraliza as chaves (session, nft.list/detail, cart,
+  favorites, quote, order, profile, wallets) + `normalizeNftQuery` (chave estável casando com o estado
+  na URL do catálogo).
+- **Retry por código** (`query-client.ts`): não retenta 4xx; retenta transitórios.
+- **Mutações:** favoritos usam **otimista + rollback** (alta frequência) — `onMutate` aplica no cache,
+  `onError` restaura o snapshot, `onSuccess` adota o estado do servidor (com a `version` autoritativa).
+  Carteiras usam **invalidação** (não otimista): alimentam o checkout, onde um estado mal reconciliado
+  confundiria num fluxo sensível a dinheiro. O padrão por recurso fica **colado à feature** (decisão da
+  Fase 3: só o hook de favoritos foi criado como referência na camada compartilhada).
+
+## Reconciliação REST ↔ Socket.IO
+
+Cada recurso carrega uma **`version`** (só o servidor a incrementa). Os eventos `nft.updated` e
+`order.updated` são aplicados ao cache por `src/lib/realtime/apply-events.ts` de forma **idempotente**:
+eventos com `version` menor/igual à do cache são **descartados** (tolera duplicados/fora de ordem). No
+**reconnect**, o cliente reconcilia o estado. A UI só **lê** o cache — preço/edições/pedido refletem
+sozinhos.
+
+> **Limitação conhecida:** no Chromium headless (Playwright/CI) o handshake engine.io do
+> `@mswjs/socket.io-binding` não completa, então a entrega **ao vivo** de eventos não ocorre nesse
+> ambiente. No browser interativo (dev/preview) o caminho funciona. Os E2E de tempo real verificam o
+> **efeito** por refetch e marcam a entrega ao vivo como `test.fixme`; a lógica de dedupe/`version` é
+> coberta por unidade (`apply-events.test.ts`). Ver `test/e2e/e2e.spec.md`.
+
+## Design (Figma)
+
+Tokens e specs de componente foram **extraídos do Figma via REST API** (valores exatos, não medidos
+sobre imagem) para `design/` e ligados ao `tailwind.config.ts`/`src/index.css` (paleta dark, Roboto
+Mono). Desvios pontuais do Figma (modal→rota, rótulos, campos sem contrato omitidos, estados não
+desenhados) estão documentados por feature na Parte 2.
+
+## Limitações e escopo
+
+- Sem backend/persistência real; pagamento é simulado.
+- Eventos de socket ao vivo indisponíveis no headless (acima).
+- Social login e "esqueceu a senha" fora de escopo (não-funcionais no desafio).
+- Mobile de conta e tela de favoritos derivados (sem frame Figma).
+- Performance mobile abaixo da meta Lighthouse, justificada em `lighthouse/REPORT.md` (SPA + MSW no
+  bundle + arte LCP externa).
+
+---
+
+# Parte 2 — Decisões por feature
 
 ## `checkout` (Fase 4)
 
