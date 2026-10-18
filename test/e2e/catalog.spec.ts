@@ -13,6 +13,8 @@ test.describe("catálogo", () => {
 
     await expect(page.getByTestId("nft-card").first()).toBeVisible();
 
+    // A busca vive no ícone do header (fiel ao Figma): abre o diálogo, busca e navega com ?q=.
+    await page.getByRole("button", { name: "Buscar NFTs" }).click();
     const search = page.getByPlaceholder("Buscar por título, coleção ou criador");
     await search.fill("Neon Apes");
     await page.getByRole("button", { name: "Buscar" }).click();
@@ -34,6 +36,7 @@ test.describe("catálogo", () => {
     await gotoWithScenario(page, "/", { scenario: "default", seed: 1 });
     await expect(page.getByTestId("nft-card").first()).toBeVisible();
 
+    await page.getByRole("button", { name: "Buscar NFTs" }).click();
     const search = page.getByPlaceholder("Buscar por título, coleção ou criador");
     await search.fill("zzz-nao-existe-zzz");
     await page.getByRole("button", { name: "Buscar" }).click();
@@ -102,7 +105,8 @@ test.describe("catálogo", () => {
     await gotoWithScenario(page, "/", { scenario: "default", seed: 1 });
     await expect(page.getByTestId("nft-card").first()).toBeVisible();
 
-    // Aplica busca.
+    // Aplica busca (via diálogo do header).
+    await page.getByRole("button", { name: "Buscar NFTs" }).click();
     const search = page.getByPlaceholder("Buscar por título, coleção ou criador");
     await search.fill("Pixel Spirits");
     await page.getByRole("button", { name: "Buscar" }).click();
@@ -120,9 +124,12 @@ test.describe("catálogo", () => {
 
     // Refresh (deep-link): estado reconstruído da URL.
     await page.reload();
+    await expect(page).toHaveURL(/q=Pixel/);
+    await expect(page.getByTestId("nft-card").first()).toHaveAttribute("aria-label", /Pixel Spirits/);
+    // A busca do header reflete o `q` da URL ao reabrir (sincronização URL → rascunho).
+    await page.getByRole("button", { name: "Buscar NFTs" }).click();
     await expect(page.getByPlaceholder("Buscar por título, coleção ou criador")).toHaveValue(
       "Pixel Spirits",
     );
-    await expect(page.getByTestId("nft-card").first()).toHaveAttribute("aria-label", /Pixel Spirits/);
   });
 });

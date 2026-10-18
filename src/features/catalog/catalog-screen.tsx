@@ -15,7 +15,6 @@ import { FeaturedBanner } from "./featured-banner";
 import { FiltersPanel } from "./filters-panel";
 import { MobileFiltersDialog } from "./mobile-filters-dialog";
 import { Toolbar } from "./toolbar";
-import { SearchBox } from "./search-box";
 import { NftCard, NftCardSkeleton } from "./nft-card";
 import { Pagination } from "./pagination";
 
@@ -64,8 +63,8 @@ export function CatalogScreen() {
 
         <section id="catalog-grid" className="flex flex-1 flex-col gap-8">
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-              <SearchBox value={search.q} onCommit={(q) => setFilters({ q })} />
+            {/* Busca vive no ícone do header (fiel ao Figma). Aqui fica só o acesso aos filtros no mobile. */}
+            <div className="flex items-center justify-end lg:hidden">
               <MobileFiltersDialog search={search} onFiltersChange={setFilters} />
             </div>
             <Toolbar sort={search.sort} onSortChange={(sort: NftSort) => setFilters({ sort })} />

@@ -39,12 +39,14 @@ test.describe("acessibilidade", () => {
     await expect(page.getByLabel("Senha", { exact: true })).toHaveAttribute("aria-invalid", "true");
   });
 
-  test("busca do catálogo é operável por teclado (Enter commita)", async ({ page }) => {
+  test("busca do header é operável por teclado (Enter commita)", async ({ page }) => {
     await gotoWithScenario(page, "/", { scenario: "default", seed: 1 });
     await expect(page.getByTestId("nft-card").first()).toBeVisible();
 
+    // Abre o diálogo de busca do header (Radix: foco vai pro input). Tudo por teclado.
+    await page.getByRole("button", { name: "Buscar NFTs" }).click();
     const search = page.getByPlaceholder("Buscar por título, coleção ou criador");
-    await search.click();
+    await expect(search).toBeFocused();
     await page.keyboard.type("Astral Glyphs");
     await page.keyboard.press("Enter");
 

@@ -1,4 +1,5 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { useEffect, useState, type FormEvent } from "react";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { skipToken, useQuery } from "@tanstack/react-query";
 import { Heart, LogOut, Menu, Search, ShoppingCart, User, Wallet } from "lucide-react";
 import type { Cart } from "@/contracts";
@@ -7,6 +8,15 @@ import { useSession } from "@/lib/auth/use-session";
 import { keys } from "@/lib/query/keys";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -77,16 +87,7 @@ export function Header() {
 
         {/* Direita: busca + carrinho + conta */}
         <div className="flex items-center gap-3 sm:gap-7">
-          <Button
-            asChild
-            variant="ghost"
-            size="icon"
-            className="text-foreground hover:text-accent-text"
-          >
-            <Link to="/" aria-label="Buscar NFTs">
-              <Search />
-            </Link>
-          </Button>
+          <HeaderSearch />
 
           <Button
             asChild
@@ -119,6 +120,71 @@ export function Header() {
         </div>
       </div>
     </header>
+  );
+}
+
+/**
+ * Busca (Figma: ícone no header, não campo no catálogo). O ícone abre um diálogo acessível (Radix:
+ * foco preso, Esc, `aria-modal`); submeter navega para o catálogo com `?q=` — a fonte única do estado
+ * de busca continua na URL da rota `/` (useCatalogSearch lê de lá). Pré-preenche com o `q` atual.
+ */
+function HeaderSearch() {
+  const navigate = useNavigate();
+  const currentQ = useRouterState({
+    select: (s) => (s.location.search as { q?: string }).q ?? "",
+  });
+  const [open, setOpen] = useState(false);
+  const [draft, setDraft] = useState("");
+
+  useEffect(() => {
+    if (open) setDraft(currentQ);
+  }, [open, currentQ]);
+
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    const q = draft.trim();
+    void navigate({ to: "/", search: { q: q === "" ? undefined : q } });
+    setOpen(false);
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button variant="ghost" size="icon" className="text-foreground hover:text-accent-text" aria-label="Buscar NFTs">
+          <Search />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-lg">
+        <DialogHeader>
+          <DialogTitle>Buscar NFTs</DialogTitle>
+          <DialogDescription>Busque por título, coleção ou criador.</DialogDescription>
+        </DialogHeader>
+        <form onSubmit={handleSubmit} role="search" className="flex items-center gap-2">
+          <label htmlFor="header-search" className="sr-only">
+            Buscar por título, coleção ou criador
+          </label>
+          <div className="relative flex-1">
+            <Search
+              className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+              aria-hidden="true"
+            />
+            <Input
+              id="header-search"
+              type="search"
+              role="searchbox"
+              autoFocus
+              placeholder="Buscar por título, coleção ou criador"
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              className="pl-9"
+            />
+          </div>
+          <Button type="submit" size="sm">
+            Buscar
+          </Button>
+        </form>
+      </DialogContent>
+    </Dialog>
   );
 }
 
