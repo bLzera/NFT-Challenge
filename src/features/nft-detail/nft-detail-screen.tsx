@@ -232,6 +232,7 @@ function NftDetailContent({ nft }: { nft: Nft }) {
             <img
               src={nft.imageUrl}
               alt={nft.title}
+              fetchPriority="high"
               className="aspect-square w-full rounded-[24px] object-cover"
             />
           </div>

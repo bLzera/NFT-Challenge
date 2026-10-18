@@ -27,6 +27,10 @@ test-results/
 blob-report/
 playwright/.cache/
 
+# Lighthouse — relatórios crus por execução (reprodutíveis via `npm run audit:lh`). O consolidado
+# lighthouse/REPORT.md e o runner/config SÃO versionados.
+lighthouse/reports/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

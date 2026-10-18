@@ -40,6 +40,8 @@ enunciado.
 | `typescript` / `typescript-eslint` / `eslint` + plugins | — | Type-check e lint. | Qualidade/tipagem exigidas em §4/§11; ESLint/TS são padrão do ecossistema. |
 | `autoprefixer` / `postcss` | — | Pipeline CSS do Tailwind. | Dependências de fato do **Tailwind** (stack obrigatória). |
 | `@tanstack/react-query-devtools` / `@tanstack/router-devtools` | — | Devtools de Query/Router (apenas em dev). | Auxílio de desenvolvimento das libs obrigatórias; não vão para produção. |
+| `lighthouse` | ^12.8.2 | Motor da auditoria de performance/qualidade (Fase 6), chamado programaticamente por `lighthouse/run.mjs`. | **Lighthouse é stack obrigatória** (§2/§10); o pacote npm é a forma de rodá-lo de forma reprodutível e versionada. Pin em 12.8.2 porque a 13.x exige **Node 22** e a 12.8.2 é a última 12.x compatível com Node 18.19.1 (engine `>=18.16`). |
+| `chrome-launcher` | ^1.2.2 | Sobe o Chromium headless para o Lighthouse controlar (reusa o binário já baixado pelo Playwright). | Forma oficial de instanciar o Chrome para o Lighthouse via Node; evita depender de um Chrome de sistema instalado no ambiente. Só em dev/CI (auditoria), não vai para o bundle. |
 
 ## Pins de versão da stack obrigatória (restrição do ambiente Node 18.19.1)
 
