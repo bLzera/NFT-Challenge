@@ -67,6 +67,11 @@ export const SCENARIOS: Record<string, ScenarioDef> = {
     latency: [120, 300],
     transientRoutes: "all",
   },
+  "favorites-toggle-5xx": {
+    describe: "Só o toggle de favorito falha (503); sessão e leitura seguem OK — exercita o rollback otimista.",
+    latency: [120, 300],
+    transientRoutes: ["favorites.toggle"],
+  },
   "http-4xx": {
     describe: "Respostas HTTP 4xx (not_found) nas chamadas.",
     latency: [120, 300],

@@ -41,6 +41,18 @@ enunciado.
 | `autoprefixer` / `postcss` | — | Pipeline CSS do Tailwind. | Dependências de fato do **Tailwind** (stack obrigatória). |
 | `@tanstack/react-query-devtools` / `@tanstack/router-devtools` | — | Devtools de Query/Router (apenas em dev). | Auxílio de desenvolvimento das libs obrigatórias; não vão para produção. |
 
+## Pins de versão da stack obrigatória (restrição do ambiente Node 18.19.1)
+
+Estes pacotes **são** da stack obrigatória (§2), então não contam como dependências adicionais — mas
+a versão foi fixada por compatibilidade com o ambiente (Node 18.19.1), decisão defensável e referida
+pelas specs:
+
+| Pacote | Versão fixada | Por quê |
+| --- | --- | --- |
+| `@playwright/test` | ^1.55.1 | 1.56+ exige **Node 20**; 1.55.1 é a última linha compatível com Node 18.19.1. Browser: Chromium (headless shell) via `npx playwright install chromium`. Ver `test/e2e/e2e.spec.md`. |
+| `msw` | ^2.15.0 | `msw@3` exige Vite ≥6 e TS ≥5.9 (incompatíveis com Node 18/Vite 5). O worker é copiado à mão porque a CLI do msw usa `styleText` (só Node 20+). |
+| `tailwindcss` | ^3.4.19 | v4 instável no Node 18; shadcn/ui estável em v3. |
+
 ## Decisões de não-adoção
 
 - **`vite-plugin-svgr`** — avaliado para importar os SVGs de `design/assets/svg/` como componentes.

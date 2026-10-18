@@ -25,4 +25,12 @@ export default tseslint.config(
       ],
     },
   },
+  {
+    // Specs Playwright (Fase 5): `test.beforeEach(({}, testInfo) => ...)` é o idioma documentado para
+    // pular as fixtures e acessar só o `testInfo` — o `{}` dispara `no-empty-pattern`, que aqui é ruído.
+    files: ['test/e2e/**/*.ts'],
+    rules: {
+      'no-empty-pattern': 'off',
+    },
+  },
 )
